@@ -155,10 +155,8 @@ instructions = [
         "01_TOP         … トップページ（一番最初に表示される画面）",
         "02_事業内容     … 6つの事業の説明",
         "03_選ばれる理由  … 会社の強み",
-        "04_会社概要     … 会社の基本情報（未確定の項目のご確認）",
+        "04_会社概要ほか  … 会社情報・ご提供写真・デザインのご希望をまとめて",
         "05_お問い合わせ  … 電話・メールの表示内容",
-        "06_写真リスト    … ご提供いただきたい写真のチェックリスト",
-        "07_デザイン・参考URL … 色の好み・参考にしたいサイトのご記入",
     ]),
     ("ご提出先", [
         "ホームページ制作担当",
@@ -253,8 +251,8 @@ row = add_row(ws, row, "お客様の声・実績", "", height=50)
 # ===========================================
 # 04_会社概要
 # ===========================================
-ws = wb.create_sheet("04_会社概要")
-row = setup_sheet(ws, "会社概要", "会社の基本情報")
+ws = wb.create_sheet("04_会社概要ほか")
+row = setup_sheet(ws, "会社概要ほか", "会社情報・写真・デザイン")
 
 row = add_section(ws, row, "名刺から掲載済みの情報（確認をお願いします）")
 row = add_row(ws, row, "会社名", "株式会社ヴィレッジ")
@@ -278,33 +276,8 @@ row = add_row(ws, row, "宅地建物取引業免許", "※ 不動産売買の免
 row = add_row(ws, row, "取引銀行", "", height=30)
 row = add_row(ws, row, "沿革・会社の歴史", "", height=60)
 
-# ===========================================
-# 05_お問い合わせ
-# ===========================================
-ws = wb.create_sheet("05_お問い合わせ")
-row = setup_sheet(ws, "お問い合わせ", "連絡先の表示")
-
-row = add_section(ws, row, "電話")
-row = add_row(ws, row, "電話番号", "090-9566-9563")
-row = add_row(ws, row, "受付時間の表記", "（ドラフト）8:00〜19:00（日曜・祝日を除く）")
-
+# --- ご提供写真（旧06を統合） ---
 row = add_spacer(ws, row)
-row = add_section(ws, row, "メール")
-row = add_row(ws, row, "メールアドレス", "village2024@outlook.jp")
-row = add_row(ws, row, "備考", "※ お問い合わせ専用アドレスをご希望の場合は作成も可能です")
-
-row = add_spacer(ws, row)
-row = add_section(ws, row, "お問い合わせフォームについて")
-row = add_row(ws, row, "フォーム設置", "※ サイトから直接送信できる入力フォームを設置しますか？（はい / いいえ）", height=36)
-row = add_row(ws, row, "受信先メール", "※ フォームを設置する場合、受信したいメールアドレスをご記入ください")
-row = add_row(ws, row, "地図の表示", "※ Googleマップ（所在地）を掲載しますか？（はい / いいえ）", height=36)
-
-# ===========================================
-# 06_写真リスト
-# ===========================================
-ws = wb.create_sheet("06_写真リスト")
-row = setup_sheet(ws, "ご提供写真リスト", "全ページ共通")
-
 row = add_section(ws, row, "ご提供いただきたい写真（右欄にメモをご記入ください）")
 photos = [
     ("トップ背景（一番目立つ写真）", "解体現場・重機・整地後の土地など、迫力のある横長写真がおすすめ"),
@@ -327,42 +300,53 @@ for name, detail in photos:
     ic.font = INPUT_FONT; ic.fill = INPUT_FILL; ic.alignment = LEFT_WRAP; ic.border = BORDER
     ws.row_dimensions[r].height = 34
     row += 1
-
-row = add_spacer(ws, row)
 c = ws.cell(row=row, column=2, value="※ スマートフォンで撮影した写真でも構いません。データはメール添付やギガファイル便等でお送りください。")
 ws.merge_cells(start_row=row, start_column=2, end_row=row, end_column=4)
 c.font = NOTE_FONT; c.alignment = LEFT_WRAP
 ws.row_dimensions[row].height = 22
-row += 2
+row += 1
 
-row = add_section(ws, row, "その他ご提供いただける写真")
-for i in range(1, 5):
-    row = add_row(ws, row, f"その他 {i}", "", height=28)
-
-# ===========================================
-# 07_デザイン・参考URL
-# ===========================================
-ws = wb.create_sheet("07_デザイン・参考URL")
-row = setup_sheet(ws, "デザインのご希望・参考URL", "サイト全体の雰囲気")
-
-row = add_section(ws, row, "サイトの色（現在のドラフト）")
-row = add_row(ws, row, "メインカラー", "青 × 緑（名刺のVマークの色に合わせています）")
-row = add_row(ws, row, "色のご希望", "※ 変更したい色・イメージ（例：もっと落ち着いた色 / 力強い印象 等）をご記入ください", height=40)
-
+# --- デザインのご希望・参考URL（旧07を統合） ---
 row = add_spacer(ws, row)
-row = add_section(ws, row, "全体の雰囲気")
-row = add_row(ws, row, "目指したい印象", "※ 当てはまるものに○（複数可）：\n信頼感 / 誠実 / 力強い / 清潔感 / 親しみやすい / 高級感 / シンプル / その他（　　　）", height=60)
+row = add_section(ws, row, "サイトの色・雰囲気")
+row = add_row(ws, row, "メインカラー（ドラフト）", "青 × 緑（名刺のVマークの色に合わせています）")
+row = add_row(ws, row, "色・雰囲気のご希望",
+    "※ 変更したい色や目指したい印象をご記入ください。\n（例：信頼感 / 誠実 / 力強い / 清潔感 / 親しみやすい / シンプル 等）", height=48)
 
 row = add_spacer(ws, row)
 row = add_section(ws, row, "参考にしたいサイト（あればURLをご記入ください）")
-row = add_row(ws, row, "参考URL①", "URL：\n良いと思った点：", height=48)
-row = add_row(ws, row, "参考URL②", "URL：\n良いと思った点：", height=48)
-row = add_row(ws, row, "参考URL③", "URL：\n良いと思った点：", height=48)
-row = add_row(ws, row, "同業他社で気になるサイト", "URL：", height=36)
+row = add_row(ws, row, "参考URL①", "URL：\n良いと思った点：", height=44)
+row = add_row(ws, row, "参考URL②", "URL：\n良いと思った点：", height=44)
+row = add_row(ws, row, "その他ご要望・ご質問", "", height=60)
+
+# ===========================================
+# 05_お問い合わせ
+# ===========================================
+ws = wb.create_sheet("05_お問い合わせ")
+row = setup_sheet(ws, "お問い合わせ", "連絡先の表示")
+
+row = add_section(ws, row, "電話")
+row = add_row(ws, row, "電話番号", "090-9566-9563")
+row = add_row(ws, row, "受付時間の表記", "（ドラフト）8:00〜19:00（日曜・祝日を除く）")
 
 row = add_spacer(ws, row)
-row = add_section(ws, row, "その他ご要望・ご質問")
-row = add_row(ws, row, "自由記入", "", height=80)
+row = add_section(ws, row, "メール")
+row = add_row(ws, row, "メールアドレス", "village2024@outlook.jp")
+row = add_row(ws, row, "備考", "※ お問い合わせ専用アドレスをご希望の場合は作成も可能です")
+
+row = add_spacer(ws, row)
+row = add_section(ws, row, "お問い合わせフォームについて")
+row = add_row(ws, row, "フォーム設置", "※ サイトから直接送信できる入力フォームを設置しますか？（はい / いいえ）", height=36)
+row = add_row(ws, row, "受信先メール", "※ フォームを設置する場合、受信したいメールアドレスをご記入ください")
+row = add_row(ws, row, "地図の表示", "※ Googleマップ（所在地）を掲載しますか？（はい / いいえ）", height=36)
+
+row = add_spacer(ws, row)
+row = add_section(ws, row, "ホームページのアドレス（ドメイン）")
+row = add_row(ws, row, "ご希望のドメイン",
+    "※ ホームページのURLに使いたい文字列のご希望があればご記入ください。\n"
+    "　（例：village-kitakyushu.jp / village-kaitai.com など）\n"
+    "　取得できるか確認し、こちらで取得手続きを行います。特に希望が無ければお任せでも大丈夫です。", height=64)
+row = add_row(ws, row, "希望する末尾", "※ ご希望があれば○：　.jp　/　.com　/　.co.jp　/　こだわらない", height=36)
 
 # ===========================================
 # 保存
