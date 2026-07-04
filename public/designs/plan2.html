@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社ヴィレッジ｜案2（親しみ・地域密着案）</title>
+<style>
+  :root{
+    --chrome-bg:#0b0f17; --chrome-panel:#141a26; --chrome-line:#26303f;
+    --chrome-text:#e6ecf5; --chrome-mute:#8c9bb2; --chrome-accent:#5b9dff;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --chrome-bg:#eef1f6; --chrome-panel:#ffffff; --chrome-line:#dde3ec; --chrome-text:#1a2333; --chrome-mute:#5a6880; --chrome-accent:#2563eb; }
+  }
+  :root[data-theme="dark"]{ --chrome-bg:#0b0f17; --chrome-panel:#141a26; --chrome-line:#26303f; --chrome-text:#e6ecf5; --chrome-mute:#8c9bb2; --chrome-accent:#5b9dff; }
+  :root[data-theme="light"]{ --chrome-bg:#eef1f6; --chrome-panel:#ffffff; --chrome-line:#dde3ec; --chrome-text:#1a2333; --chrome-mute:#5a6880; --chrome-accent:#2563eb; }
+
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--chrome-bg); color:var(--chrome-text);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,sans-serif; }
+
+  .bar{ position:sticky; top:0; z-index:100; background:color-mix(in srgb,var(--chrome-bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--chrome-line); }
+  .bar-in{ max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:12px 18px; padding:12px 20px; }
+  .bar h1{ font-size:14px; margin:0; letter-spacing:.02em; font-weight:700; }
+  .bar h1 small{ display:block; font-weight:400; font-size:11px; color:var(--chrome-mute); letter-spacing:.06em; }
+  .tabs{ display:flex; gap:8px; margin-left:auto; flex-wrap:wrap; }
+  .tab{ cursor:pointer; border:1px solid var(--chrome-line); background:var(--chrome-panel); color:var(--chrome-text); padding:8px 14px; border-radius:999px; font-size:12.5px; line-height:1.3; font-family:inherit; transition:.18s; text-align:left; }
+  .tab b{ font-size:13px; } .tab span{ display:block; color:var(--chrome-mute); font-size:10.5px; margin-top:1px; }
+  .tab:hover{ border-color:var(--chrome-accent); }
+  .tab[aria-selected="true"]{ border-color:var(--chrome-accent); box-shadow:0 0 0 1px var(--chrome-accent) inset; background:color-mix(in srgb,var(--chrome-accent) 12%, var(--chrome-panel)); }
+  .tab:focus-visible{ outline:2px solid var(--chrome-accent); outline-offset:2px; }
+
+  .stage{ padding:22px 20px 60px; }
+  .frame{ border:1px solid var(--chrome-line); border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.28); }
+  .panel{ display:none; } .panel.active{ display:block; }
+  .note{ max-width:1180px; margin:0 auto 14px; color:var(--chrome-mute); font-size:12.5px; line-height:1.6; padding:0 4px; }
+  .note b{ color:var(--chrome-text); }
+
+  svg.ico{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* clean photo placeholder (実写が入るスロット) */
+  .ph{ display:flex; align-items:center; justify-content:center; text-align:center; background:#e4e8ee; color:#8b95a4; }
+  .ph .lab{ display:inline-flex; gap:7px; align-items:center; font-size:12px; letter-spacing:.05em; }
+  .ph.dark{ background:linear-gradient(135deg,#2b333d,#161b21); color:#aab3bf; }
+
+  /* ============ 案1 : ACTIVE型（白基調・情報リッチ・実写カード） ============ */
+  .v1{ --ink:#12233d; --mute:#55647c; --line:#e5eaf1; --soft:#f4f7fb; --navy:#153a72; --sky:#2b8fe0; --red:#e0362f; --green:#1fa463;
+       background:#fff; color:var(--ink); font-size:16px; line-height:1.75; }
+  .v1 a{ color:inherit; }
+  .v1 .hd{ position:sticky; top:0; z-index:6; display:flex; align-items:center; gap:20px; padding:12px 26px; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .v1 .brand{ display:flex; align-items:center; gap:11px; font-weight:800; }
+  .v1 .vmark{ width:30px; height:30px; display:grid; place-items:center; border-radius:8px; background:linear-gradient(135deg,var(--sky),var(--green)); color:#fff; font-weight:900; }
+  .v1 .brand small{ display:block; font-size:10px; color:#7286a3; font-weight:500; letter-spacing:.16em; }
+  .v1 nav{ display:flex; gap:20px; margin-left:12px; font-size:13.5px; color:#41546f; }
+  .v1 nav a{ text-decoration:none; }
+  .v1 .callbtn{ margin-left:auto; display:flex; align-items:center; gap:12px; }
+  .v1 .tel{ font-weight:900; font-size:18px; color:var(--navy); }
+  .v1 .tel small{ display:block; font-size:10px; color:#7286a3; font-weight:600; }
+  .v1 .pill{ background:var(--red); color:#fff; padding:10px 18px; border-radius:8px; font-weight:800; font-size:13px; text-decoration:none; }
+
+  .v1 .hero{ position:relative; }
+  .v1 .hero .img{ height:520px; }
+  .v1 .hero .img .lab{ font-size:13px; }
+  .v1 .hero .cap{ position:absolute; left:0; right:0; bottom:0; top:0; display:grid; align-items:center;
+    background:linear-gradient(90deg, rgba(10,26,52,.72), rgba(10,26,52,.15) 60%, transparent); }
+  .v1 .hero .cap .in{ max-width:1180px; margin:0 auto; padding:0 26px; width:100%; color:#fff; }
+  .v1 .hero .tagband{ display:inline-block; background:var(--red); font-size:12.5px; font-weight:800; padding:6px 14px; border-radius:5px; }
+  .v1 .hero h2{ font-size:clamp(30px,5vw,54px); font-weight:900; line-height:1.18; margin:18px 0 0; text-shadow:0 2px 16px rgba(0,0,0,.35); }
+  .v1 .hero p{ max-width:520px; margin:16px 0 0; text-shadow:0 2px 12px rgba(0,0,0,.35); }
+
+  /* early CTA row */
+  .v1 .quickcta{ background:var(--navy); }
+  .v1 .quickcta .in{ max-width:1180px; margin:0 auto; padding:20px 26px; display:grid; grid-template-columns:auto 1fr 1fr 1fr; gap:16px; align-items:center; }
+  .v1 .quickcta .msg{ color:#dbe7f6; font-weight:800; }
+  .v1 .quickcta .msg small{ display:block; font-weight:500; font-size:12px; color:#9fb6d4; }
+  .v1 .qbtn{ border-radius:10px; padding:14px; text-align:center; text-decoration:none; font-weight:800; line-height:1.3; }
+  .v1 .qbtn small{ display:block; font-size:11px; font-weight:600; opacity:.85; margin-bottom:3px; }
+  .v1 .qbtn.tel{ background:#fff; color:var(--navy); } .v1 .qbtn.tel .num{ font-size:19px; font-weight:900; }
+  .v1 .qbtn.mail{ background:var(--red); color:#fff; } .v1 .qbtn.line{ background:var(--green); color:#fff; }
+
+  .v1 section.blk{ padding:74px 26px; }
+  .v1 .sec-in{ max-width:1180px; margin:0 auto; }
+  .v1 .eb{ display:flex; align-items:baseline; gap:12px; }
+  .v1 .eb .en{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(28px,4vw,42px); font-weight:800; color:var(--navy); }
+  .v1 .eb .jp{ font-size:13px; color:var(--sky); font-weight:800; letter-spacing:.06em; }
+  .v1 .eb .jp::before{ content:"● "; }
+  .v1 .sd{ color:var(--mute); margin:16px 0 0; max-width:760px; }
+
+  .v1 .about{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-top:20px; }
+  .v1 .about .txt h3{ font-size:clamp(22px,3vw,30px); font-weight:900; margin:14px 0 0; line-height:1.4; }
+  .v1 .about .imgs{ position:relative; }
+  .v1 .about .imgs .a{ height:300px; border-radius:16px; }
+  .v1 .about .imgs .b{ position:absolute; right:-14px; bottom:-24px; width:44%; height:150px; border-radius:14px; border:5px solid #fff; box-shadow:0 12px 30px rgba(12,31,58,.18); }
+
+  .v1 .pcards{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:34px; }
+  .v1 .pcard{ background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 8px 22px rgba(12,31,58,.06); transition:.2s; }
+  .v1 .pcard:hover{ transform:translateY(-4px); }
+  .v1 .pcard .img{ height:170px; }
+  .v1 .pcard .body{ padding:20px 22px; }
+  .v1 .pcard h4{ margin:0; font-size:19px; font-weight:900; }
+  .v1 .pcard h4 span{ border-bottom:3px solid var(--sky); padding-bottom:2px; }
+  .v1 .pcard p{ margin:10px 0 0; font-size:13.5px; color:var(--mute); }
+
+  /* Works with spec */
+  .v1 .works{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:34px; }
+  .v1 .work{ display:grid; grid-template-columns:200px 1fr; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; }
+  .v1 .work .img{ height:100%; min-height:150px; }
+  .v1 .work .wb{ padding:18px 20px; }
+  .v1 .work .tag{ display:inline-block; background:var(--soft); color:var(--navy); font-size:11px; font-weight:800; padding:4px 10px; border-radius:5px; }
+  .v1 .work h4{ margin:10px 0 0; font-size:15px; }
+  .v1 .work dl{ margin:12px 0 0; display:grid; grid-template-columns:auto 1fr; gap:5px 14px; font-size:12.5px; }
+  .v1 .work dt{ color:var(--mute); } .v1 .work dd{ margin:0; font-weight:700; }
+
+  .v1 .cinfo{ background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:6px 26px; margin-top:28px; }
+  .v1 .cinfo .row{ display:grid; grid-template-columns:180px 1fr; padding:15px 0; border-top:1px solid var(--line); }
+  .v1 .cinfo .row:first-child{ border-top:0; }
+  .v1 .cinfo dt{ color:var(--mute); font-size:13px; font-weight:700; margin:0; } .v1 .cinfo dd{ margin:0; font-size:14px; }
+
+  /* ============ 案2 : サンライズ型（白基調・親しみ・緑/オレンジ） ============ */
+  .v2{ --bg:#ffffff; --soft:#f0f8f2; --ink:#16281d; --mute:#5c6d63; --line:#e2ece6; --green:#159a4e; --green2:#0f7d3e; --orange:#f7811c; --gold:#d8a52c;
+       background:var(--bg); color:var(--ink); font-size:16px; line-height:1.75; }
+  .v2 a{ color:inherit; }
+  .v2 .topbar{ background:linear-gradient(90deg,#0f7d3e,#159a4e); color:#fff; }
+  .v2 .topbar .ti{ max-width:1180px; margin:0 auto; padding:8px 26px; display:flex; align-items:center; gap:14px; font-size:12px; }
+  .v2 .topbar .seals{ display:flex; gap:8px; }
+  .v2 .topbar .seal{ background:radial-gradient(circle at 35% 30%,#fff2cf,#efc873); color:#6a4a08; font-weight:800; border:1px solid #caa23f; border-radius:999px; padding:3px 12px; font-size:11px; }
+  .v2 .topbar .r{ margin-left:auto; display:flex; align-items:center; gap:14px; }
+  .v2 .topbar .tel{ font-weight:900; font-size:16px; }
+  .v2 .hd{ position:sticky; top:0; z-index:6; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); display:flex; align-items:center; gap:18px; padding:12px 26px; }
+  .v2 .brand{ display:flex; align-items:center; gap:11px; font-weight:800; }
+  .v2 .vmark{ width:36px; height:36px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:900; background:radial-gradient(circle at 35% 30%,#4ecb84,var(--green2)); box-shadow:0 3px 8px rgba(15,125,62,.3); }
+  .v2 .brand small{ display:block; font-size:10px; color:var(--mute); font-weight:500; letter-spacing:.14em; }
+  .v2 nav{ display:flex; gap:18px; margin-left:8px; font-size:13.5px; } .v2 nav a{ text-decoration:none; }
+  .v2 .quote{ margin-left:auto; background:var(--orange); color:#fff; padding:12px 20px; border-radius:12px; font-weight:800; font-size:13.5px; text-decoration:none; box-shadow:0 6px 16px rgba(247,129,28,.32); }
+
+  .v2 .hero{ position:relative; min-height:460px; display:grid; align-items:center; }
+  .v2 .hero .bgimg{ position:absolute; inset:0; }
+  .v2 .hero .ov{ position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,40,20,.6), rgba(10,40,20,.1) 70%); }
+  .v2 .hero .in{ position:relative; max-width:1180px; margin:0 auto; padding:40px 26px; width:100%; color:#fff; }
+  .v2 .hero .tagband{ display:inline-block; background:var(--orange); font-weight:800; font-size:13px; padding:6px 16px; border-radius:6px; transform:skewX(-8deg); }
+  .v2 .hero .tagband span{ display:inline-block; transform:skewX(8deg); }
+  .v2 .hero h2{ font-style:italic; font-size:clamp(30px,6vw,60px); font-weight:900; margin:18px 0 0; line-height:1.1; text-shadow:0 3px 20px rgba(0,0,0,.4); }
+  .v2 .hero h2 small{ display:block; font-style:normal; font-size:16px; letter-spacing:.28em; font-weight:600; margin-top:10px; color:#e7f5ec; }
+  .v2 .hero p{ max-width:520px; margin:18px 0 0; font-size:15px; color:#eaf4ee; text-shadow:0 2px 10px rgba(0,0,0,.35); }
+
+  .v2 .cta3{ background:var(--soft); }
+  .v2 .cta3 .in{ max-width:1180px; margin:0 auto; padding:24px 26px; display:grid; grid-template-columns:1fr auto auto auto; gap:14px; align-items:center; }
+  .v2 .cta3 .m{ font-weight:900; color:var(--green2); } .v2 .cta3 .m small{ display:block; font-weight:600; color:var(--mute); font-size:12px; }
+  .v2 .c3{ padding:14px 22px; border-radius:12px; text-decoration:none; font-weight:800; text-align:center; color:#fff; }
+  .v2 .c3.tel{ background:#fff; color:var(--green2); border:2px solid var(--green); } .v2 .c3.tel .num{ font-size:18px; font-weight:900; }
+  .v2 .c3.mail{ background:var(--orange); } .v2 .c3.line{ background:var(--green); }
+
+  .v2 .intro{ text-align:center; padding:44px 26px 8px; }
+  .v2 .intro p{ margin:0 auto; max-width:820px; color:#33463b; font-weight:600; }
+
+  .v2 section.blk{ padding:56px 26px; }
+  .v2 .sec-in{ max-width:1180px; margin:0 auto; }
+  .v2 .head{ text-align:center; }
+  .v2 .eb{ color:var(--green); font-weight:900; letter-spacing:.2em; font-size:12px; }
+  .v2 h3.st{ font-size:clamp(24px,3.2vw,34px); margin:6px 0 0; font-weight:900; }
+  .v2 h3.st .bar{ display:block; width:56px; height:4px; border-radius:2px; margin:14px auto 0; background:linear-gradient(90deg,var(--green),var(--orange)); }
+  .v2 .sd{ color:var(--mute); margin:12px 0 0; }
+
+  .v2 .menu{ margin-top:36px; display:grid; gap:14px; }
+  .v2 .mrow{ display:grid; grid-template-columns:180px 1fr auto; gap:22px; align-items:center; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 5px 14px rgba(20,50,30,.05); transition:.2s; }
+  .v2 .mrow:hover{ box-shadow:0 12px 26px rgba(20,50,30,.1); transform:translateY(-2px); }
+  .v2 .mrow .thumb{ height:120px; }
+  .v2 .mrow .mtext h4{ margin:0; font-size:19px; font-weight:900; display:flex; align-items:center; gap:10px; }
+  .v2 .mrow .mtext h4 .ci{ color:var(--green); font-size:22px; }
+  .v2 .mrow .mtext p{ margin:6px 0 0; font-size:13.5px; color:var(--mute); max-width:560px; }
+  .v2 .mrow .go{ margin-right:24px; width:40px; height:40px; border-radius:50%; background:var(--green); color:#fff; display:grid; place-items:center; font-weight:900; }
+
+  .v2 .voice{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:36px; }
+  .v2 .vc{ background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .v2 .vc .img{ height:150px; } .v2 .vc .vb{ padding:18px 20px; }
+  .v2 .vc .stars{ color:var(--gold); letter-spacing:2px; } .v2 .vc h4{ margin:6px 0 0; font-size:15px; } .v2 .vc p{ margin:8px 0 0; font-size:13px; color:var(--mute); }
+
+  .v2 .flow{ display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:36px; }
+  .v2 .step{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 12px; text-align:center; position:relative; }
+  .v2 .step .no{ font-family:"Helvetica Neue",Arial,sans-serif; color:var(--green); font-weight:800; font-size:13px; }
+  .v2 .step .ci{ font-size:26px; color:var(--green2); margin-top:6px; } .v2 .step h4{ margin:8px 0 0; font-size:13px; }
+  .v2 .area{ background:var(--soft); border-radius:16px; padding:26px; margin-top:36px; }
+  .v2 .area .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .v2 .area .t{ background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 14px; font-size:13px; }
+  .v2 .company{ background:var(--soft); }
+  .v2 .company .box{ background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; margin-top:32px; }
+  .v2 .company .row{ display:grid; grid-template-columns:180px 1fr; border-top:1px solid var(--line); } .v2 .company .row:first-child{ border-top:0; }
+  .v2 .company dt{ background:#f5faf7; padding:15px 20px; font-size:13px; color:var(--mute); font-weight:700; margin:0; } .v2 .company dd{ padding:15px 20px; font-size:14px; margin:0; }
+
+  /* ============ 案3 : クリーンアイランド型（白基調・洗練・大英字） ============ */
+  .v3{ --ink:#1b211f; --mute:#5f6a66; --line:#e6eae8; --paper:#ffffff; --soft:#eef5f0; --green:#2fae55; --green2:#218a42;
+       background:var(--paper); color:var(--ink); font-size:16px; line-height:1.85; font-weight:300; letter-spacing:.01em; }
+  .v3 a{ color:inherit; }
+  .v3 .hd{ position:absolute; top:0; left:0; right:0; z-index:5; display:flex; align-items:center; gap:24px; padding:24px 34px; }
+  .v3 .brand{ display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.08em; color:#fff; }
+  .v3 .vmark{ width:30px; height:30px; border-radius:7px; display:grid; place-items:center; color:#06140a; font-weight:900; background:linear-gradient(135deg,#7be3a0,var(--green)); }
+  .v3 .brand small{ display:block; font-size:9px; color:#c6cfca; letter-spacing:.24em; font-weight:400; }
+  .v3 nav{ display:flex; gap:26px; margin-left:auto; font-size:12.5px; letter-spacing:.06em; color:#e4eae7; } .v3 nav a{ text-decoration:none; }
+  .v3 .icontact{ border:1px solid rgba(255,255,255,.4); padding:9px 18px; border-radius:2px; font-size:12px; letter-spacing:.08em; text-decoration:none; color:#fff; }
+  .v3 .hero{ position:relative; min-height:580px; display:grid; place-items:center; overflow:hidden; }
+  .v3 .hero .bg{ position:absolute; inset:0; } .v3 .hero .bg::after{ content:""; position:absolute; inset:0; background:rgba(8,12,10,.5); }
+  .v3 .hero .in{ position:relative; text-align:center; padding:40px; color:#fff; }
+  .v3 .slash{ width:2px; height:64px; background:var(--green); transform:rotate(24deg); margin:0 auto; }
+  .v3 .en{ font-size:clamp(30px,6.5vw,72px); font-weight:200; letter-spacing:.04em; margin:26px 0 0; line-height:1.05; font-family:"Helvetica Neue",Arial,sans-serif; }
+  .v3 .jp{ font-size:clamp(15px,2.2vw,20px); letter-spacing:.8em; text-indent:.8em; margin:18px 0 0; font-weight:400; }
+  .v3 .subline{ color:#dfe6e2; max-width:540px; margin:24px auto 0; font-size:14.5px; }
+  .v3 .scroll{ margin-top:32px; font-size:11px; letter-spacing:.3em; color:#c6cfca; }
+
+  .v3 section.blk{ padding:100px 34px; }
+  .v3 .sec-in{ max-width:1120px; margin:0 auto; }
+  .v3 .kick{ text-align:center; }
+  .v3 .kick .en{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(34px,5vw,58px); font-weight:200; letter-spacing:.03em; margin:0; line-height:1.1; }
+  .v3 .kick .en .sl{ color:var(--green); }
+  .v3 .kick .jp{ font-size:12.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:10px; }
+  .v3 .center-lead{ text-align:center; max-width:640px; margin:22px auto 0; color:var(--mute); font-size:15px; }
+
+  .v3 .about{ display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center; }
+  .v3 .about .wm{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(46px,6vw,74px); font-weight:200; letter-spacing:.03em; }
+  .v3 .about .wm .sl{ color:var(--green); }
+  .v3 .about .jp{ font-size:12.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:8px; }
+  .v3 .about p{ margin:22px 0 0; color:var(--mute); font-size:15px; }
+  .v3 .about .img{ height:360px; border-radius:4px; }
+
+  .v3 .svc{ position:relative; overflow:hidden; }
+  .v3 .svc .bg{ position:absolute; inset:0; } .v3 .svc .bg::after{ content:""; position:absolute; inset:0; background:rgba(30,120,60,.82); }
+  .v3 .svc .kick .en,.v3 .svc .kick .jp,.v3 .svc .center-lead{ color:#fff; } .v3 .svc .kick .en .sl{ color:#bff3cf; }
+  .v3 .svc .cards{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px; }
+  .v3 .svc .sc{ position:relative; height:230px; border-radius:4px; overflow:hidden; display:flex; align-items:flex-end; }
+  .v3 .svc .sc .img{ position:absolute; inset:0; }
+  .v3 .svc .sc h4{ position:relative; margin:0; width:100%; padding:16px; color:#fff; font-weight:600; font-size:18px; background:linear-gradient(transparent, rgba(0,0,0,.6)); }
+  .v3 .svc .more{ position:relative; text-align:center; margin-top:36px; }
+  .v3 .svc .more a{ background:#fff; color:var(--green2); padding:14px 40px; border-radius:2px; text-decoration:none; font-weight:600; font-size:13px; letter-spacing:.08em; }
+
+  .v3 .nbr{ background:var(--soft); }
+  .v3 .nbr .head{ text-align:center; } .v3 .nbr .kick{ text-align:center; }
+  .v3 .trio{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:44px; }
+  .v3 .trio .it{ text-align:center; } .v3 .trio .img{ height:180px; border-radius:4px; } .v3 .trio h4{ margin:16px 0 0; font-size:15px; font-weight:600; }
+
+  .v3 .cta{ text-align:center; }
+  .v3 .cta .en{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(30px,4.4vw,50px); font-weight:200; }
+  .v3 .cta a{ display:inline-block; margin-top:24px; border:1px solid var(--green); color:var(--green2); padding:15px 44px; border-radius:2px; text-decoration:none; letter-spacing:.1em; font-size:13px; }
+  .v3 .info{ display:flex; flex-wrap:wrap; gap:8px 40px; justify-content:center; margin-top:40px; color:var(--mute); font-size:13px; }
+
+  @media (max-width:880px){
+    .v1 nav,.v2 nav,.v3 nav,.v2 .topbar .seals{ display:none; }
+    .v1 .quickcta .in{ grid-template-columns:1fr 1fr; } .v1 .quickcta .msg{ grid-column:1 / -1; }
+    .v1 .about,.v3 .about{ grid-template-columns:1fr; } .v1 .pcards,.v1 .works,.v2 .voice,.v3 .svc .cards,.v3 .trio{ grid-template-columns:1fr 1fr; }
+    .v2 .cta3 .in{ grid-template-columns:1fr 1fr; } .v2 .cta3 .m{ grid-column:1 / -1; }
+    .v2 .flow{ grid-template-columns:repeat(3,1fr); } .v2 .mrow{ grid-template-columns:120px 1fr; } .v2 .mrow .go{ display:none; }
+    .v1 .work{ grid-template-columns:130px 1fr; }
+  }
+  @media (max-width:520px){
+    .v1 .pcards,.v1 .works,.v2 .voice,.v3 .svc .cards,.v3 .trio,.v2 .flow{ grid-template-columns:1fr; }
+    .v2 .cta3 .in,.v1 .quickcta .in{ grid-template-columns:1fr; } .v2 .mrow,.v1 .work{ grid-template-columns:1fr; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
+</style><style>body{background:#ffffff;}</style>
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <symbol id="ic-demo" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21v-6l4-2 3 4"/><path d="M12 13l6-8 3 2-4 7"/><circle cx="7" cy="18" r="1.5"/></symbol>
+  <symbol id="ic-cons" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/><path d="M15.5 15.5l1.5 1.5 2.5-2.5"/></symbol>
+  <symbol id="ic-land" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20V9l6-4 6 4v11"/><path d="M6 13h12M12 5v15"/></symbol>
+  <symbol id="ic-reform" viewBox="0 0 24 24"><path d="M14.5 5.5a3 3 0 00-4 4l-6 6 2 2 6-6a3 3 0 004-4l-2 2-2-2 2-2z"/><path d="M15 15l4 4"/></symbol>
+  <symbol id="ic-reno" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v10h12V10"/><path d="M9 20v-4h6v4"/><path d="M12 2v2M20 6l1-1M3 5l1 1"/></symbol>
+  <symbol id="ic-cam" viewBox="0 0 24 24"><path d="M3 8h4l1.5-2h7L17 8h4v11H3z"/><circle cx="12" cy="13" r="3.2"/></symbol>
+  <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 3z"/></symbol>
+  <symbol id="ic-doc2" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></symbol>
+  <symbol id="ic-truck" viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="17.5" cy="17" r="1.6"/></symbol>
+  <symbol id="ic-check2" viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></symbol>
+  <symbol id="ic-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="M11 11l8 8M16 16l2-2M19 19l2-2"/></symbol>
+</svg><div class="panel active v2" data-p="2">
+    <div class="topbar"><div class="ti">
+      <div class="seals"><span class="seal">有資格者在籍</span><span class="seal">見積り無料</span><span class="seal">近隣対策 徹底</span></div>
+      <div class="r"><span>北九州・門司区 地域密着</span><span class="tel">☎ 090-9566-9563</span></div>
+    </div></div>
+    <header class="hd">
+      <div class="brand"><span class="vmark">V</span><span>株式会社ヴィレッジ<small>VILLAGE INC.</small></span></div>
+      <nav><a href="#">事業内容</a><a href="#">お客様の声</a><a href="#">会社概要</a><a href="#">お問い合わせ</a></nav>
+      <a class="quote" href="#">かんたん無料見積り ▸</a>
+    </header>
+    <section class="hero">
+      <div class="bgimg ph"><span class="lab"><svg class="ico"><use href="#ic-cam"/></svg>メインビジュアル（実写）</span></div>
+      <div class="ov"></div>
+      <div class="in">
+        <span class="tagband"><span>安心・安全・地域密着の解体屋</span></span>
+        <h2>株式会社ヴィレッジ<small>VILLAGE INC.</small></h2>
+        <p>北九州・門司区を拠点に、解体・土地開発・リフォームをワンストップで。まごころ込めた施工でお応えします。</p>
+      </div>
+    </section>
+    <div class="cta3"><div class="in">
+      <div class="m">解体の費用・お見積りでお悩みですか？<small>現地調査・お見積りは無料です</small></div>
+      <a class="c3 tel" href="#"><span class="num">090-9566-9563</span></a>
+      <a class="c3 mail" href="#">メールで見積り</a>
+      <a class="c3 line" href="#">LINEで相談</a>
+    </div></div>
+    <div class="intro"><p>「解体って何から始めれば？」——そんな不安に、地域の専門スタッフが親身にお応えします。着手前・完了後のあいさつ回りなど、近隣への配慮も徹底しています。</p></div>
+
+    <section class="blk"><div class="sec-in">
+      <div class="head"><span class="eb">SERVICE</span><h3 class="st">事業内容<span class="bar"></span></h3><p class="sd">解体から土地活用、住まいの再生まで。ワンストップで対応します。</p></div>
+      <div class="menu">
+        <div class="mrow"><div class="thumb ph"><span class="lab">写真</span></div><div class="mtext"><h4><span class="ci"><svg class="ico"><use href="#ic-demo"/></svg></span>建物解体工事</h4><p>戸建からビルまで、木造・鉄骨・RC造に対応。近隣配慮と適正な分別解体を徹底。</p></div><div class="go">▸</div></div>
+        <div class="mrow"><div class="thumb ph"><span class="lab">写真</span></div><div class="mtext"><h4><span class="ci"><svg class="ico"><use href="#ic-cons"/></svg></span>解体業コンサルタント</h4><p>計画立案から届出・許認可、見積精査まで。有資格者が最適プランをご提案。</p></div><div class="go">▸</div></div>
+        <div class="mrow"><div class="thumb ph"><span class="lab">写真</span></div><div class="mtext"><h4><span class="ci"><svg class="ico"><use href="#ic-land"/></svg></span>土地開発</h4><p>造成・整地・インフラ整備まで。土地の価値を最大化する開発をサポート。</p></div><div class="go">▸</div></div>
+        <div class="mrow"><div class="thumb ph"><span class="lab">写真</span></div><div class="mtext"><h4><span class="ci"><svg class="ico"><use href="#ic-reform"/></svg></span>リフォーム事業</h4><p>水回りから外装・内装まで。暮らしやすさと資産価値の向上をお手伝い。</p></div><div class="go">▸</div></div>
+        <div class="mrow"><div class="thumb ph"><span class="lab">写真</span></div><div class="mtext"><h4><span class="ci"><svg class="ico"><use href="#ic-reno"/></svg></span>リノベーション事業</h4><p>中古住宅を新たな価値へ。デザインから施工まで一貫対応。</p></div><div class="go">▸</div></div>
+      </div>
+    </div></section>
+
+    <section class="blk" style="background:var(--soft)"><div class="sec-in">
+      <div class="head"><span class="eb">VOICE</span><h3 class="st">お客様の声<span class="bar"></span></h3><p class="sd">※ 施工後に掲載予定です。</p></div>
+      <div class="voice">
+        <div class="vc"><div class="img ph"><span class="lab">写真</span></div><div class="vb"><div class="stars">★★★★★</div><h4>丁寧に対応いただきました</h4><p>近隣へのあいさつまでしてくださり、安心して任せられました。（門司区・M様）</p></div></div>
+        <div class="vc"><div class="img ph"><span class="lab">写真</span></div><div class="vb"><div class="stars">★★★★★</div><h4>見積りが分かりやすい</h4><p>金額の内訳を丁寧に説明してもらえて納得できました。（小倉北区・K様）</p></div></div>
+        <div class="vc"><div class="img ph"><span class="lab">写真</span></div><div class="vb"><div class="stars">★★★★★</div><h4>対応が早い</h4><p>問い合わせから現地調査までスピーディーでした。（八幡西区・T様）</p></div></div>
+      </div>
+    </div></section>
+
+    <section class="blk"><div class="sec-in">
+      <div class="head"><span class="eb">FLOW</span><h3 class="st">解体工事の流れ<span class="bar"></span></h3></div>
+      <div class="flow">
+        <div class="step"><div class="no">STEP 1</div><div class="ci"><svg class="ico"><use href="#ic-chat"/></svg></div><h4>お問い合わせ</h4></div>
+        <div class="step"><div class="no">STEP 2</div><div class="ci"><svg class="ico"><use href="#ic-doc2"/></svg></div><h4>現地調査・お見積り</h4></div>
+        <div class="step"><div class="no">STEP 3</div><div class="ci"><svg class="ico"><use href="#ic-check2"/></svg></div><h4>ご契約</h4></div>
+        <div class="step"><div class="no">STEP 4</div><div class="ci"><svg class="ico"><use href="#ic-hand"/></svg></div><h4>近隣あいさつ</h4></div>
+        <div class="step"><div class="no">STEP 5</div><div class="ci"><svg class="ico"><use href="#ic-demo"/></svg></div><h4>解体施工</h4></div>
+        <div class="step"><div class="no">STEP 6</div><div class="ci"><svg class="ico"><use href="#ic-key"/></svg></div><h4>完了・お引渡し</h4></div>
+      </div>
+      <div class="area">
+        <strong>対応エリア</strong>
+        <div class="tags"><span class="t">門司区</span><span class="t">小倉北区</span><span class="t">小倉南区</span><span class="t">戸畑区</span><span class="t">八幡東区</span><span class="t">八幡西区</span><span class="t">若松区</span><span class="t">及び周辺地域</span></div>
+      </div>
+    </div></section>
+
+    <section class="blk company"><div class="sec-in">
+      <div class="head"><span class="eb">COMPANY</span><h3 class="st">会社概要<span class="bar"></span></h3></div>
+      <div class="box"><dl style="margin:0">
+        <div class="row"><dt>会社名</dt><dd>株式会社ヴィレッジ</dd></div>
+        <div class="row"><dt>代表者</dt><dd>代表取締役　中川 基次（一級土木施工管理技士）</dd></div>
+        <div class="row"><dt>所在地</dt><dd>〒800-0042 福岡県北九州市門司区上馬寄1丁目8-1-1203</dd></div>
+        <div class="row"><dt>設立</dt><dd>2024年</dd></div>
+        <div class="row"><dt>許可・登録</dt><dd>解体工事業登録番号：福岡県知事 第1456号／建築物石綿含有建材調査者：第21071177号</dd></div>
+      </dl></div>
+    </div></section>
+  </div>
+</body>
+</html>
