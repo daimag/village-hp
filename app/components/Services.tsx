@@ -1,24 +1,45 @@
 import { services } from "@/app/lib/company";
 import { ServiceIcon } from "./ServiceIcon";
-import { SectionHeading } from "./SectionHeading";
 
 export function Services() {
   return (
-    <section id="services" className="bg-slate-50 py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Services" title="事業内容" description="解体から土地活用、住まいの再生まで。ワンストップで対応します。" />
-
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <article
-              key={service.title}
-              className="group rounded-2xl border border-slate-100 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg"
-            >
-              <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-emerald-50 text-sky-600 transition group-hover:from-sky-600 group-hover:to-emerald-500 group-hover:text-white">
-                <ServiceIcon icon={service.icon} className="h-7 w-7" />
+    <section id="service" className="service">
+      <div
+        className="bg ph dark"
+        style={{
+          backgroundImage: "url('/designs/img/hero.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div className="wrap">
+        <div className="kick">
+          <p className="t en">
+            <span className="sl">/</span> SERVICE
+          </p>
+          <div className="j">事業内容</div>
+        </div>
+        <p className="lead">
+          建物解体を軸に、土地開発・リフォーム・リノベーションまで。北九州で幅広く対応しています。
+        </p>
+        <div className="grid">
+          {services.map((s, i) => (
+            <article key={s.title} className="card">
+              <span
+                className="img"
+                style={{
+                  backgroundImage: `url('${s.image}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <span className="cih">
+                <ServiceIcon icon={s.icon} className="ico" />
               </span>
-              <h3 className="mt-5 text-lg font-bold text-slate-900">{service.title}</h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-slate-600">{service.description}</p>
+              <div className="meta">
+                <div className="no">{String(i + 1).padStart(2, "0")}</div>
+                <h3>{s.title}</h3>
+              </div>
             </article>
           ))}
         </div>

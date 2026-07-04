@@ -26,14 +26,6 @@ const paths: Record<Service["icon"], React.ReactNode> = {
       <path d="M6 13h12M12 5v15" />
     </>
   ),
-  realestate: (
-    // 不動産（家＋タグ）
-    <>
-      <path d="M4 11l8-6 8 6" />
-      <path d="M6 10v10h12V10" />
-      <path d="M10 20v-5h4v5" />
-    </>
-  ),
   reform: (
     // リフォーム（工具）
     <>

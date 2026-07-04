@@ -1,96 +1,61 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Logo } from "./Logo";
-import { company } from "@/app/lib/company";
-
-const nav = [
-  { href: "#services", label: "事業内容" },
-  { href: "#strengths", label: "選ばれる理由" },
-  { href: "#company", label: "会社概要" },
-  { href: "#contact", label: "お問い合わせ" },
-];
+import { company, nav } from "@/app/lib/company";
 
 export function Header() {
+  const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setSolid(window.scrollY > window.innerHeight - 90);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 shadow-sm backdrop-blur" : "bg-white/70 backdrop-blur"
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center" aria-label={company.name}>
-          <Logo />
+    <header className={`hd${solid ? " solid" : ""}`}>
+      <div className="in">
+        <a className="brand" href="#top" aria-label={company.name}>
+          <span className="vmark">V</span>
+          <span className="bt">
+            VILLAGE
+            <small>{company.name}</small>
+          </span>
         </a>
-
-        <nav className="hidden items-center gap-8 md:flex">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-sky-600"
-            >
-              {item.label}
+        <nav>
+          {nav.map((n) => (
+            <a key={n.href} href={n.href}>
+              {n.label}
             </a>
           ))}
-          <a
-            href={`tel:${company.tel.replace(/-/g, "")}`}
-            className="rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-sky-700"
-          >
-            {company.tel}
-          </a>
         </nav>
-
+        <a className="cbtn" href="#contact">
+          CONTACT
+        </a>
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-md text-slate-700 md:hidden"
+          className="burger"
           aria-label="メニュー"
           aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
         >
-          <span className="relative block h-4 w-6">
-            <span className={`absolute left-0 block h-0.5 w-6 bg-current transition ${open ? "top-1.5 rotate-45" : "top-0"}`} />
-            <span className={`absolute left-0 top-1.5 block h-0.5 w-6 bg-current transition ${open ? "opacity-0" : "opacity-100"}`} />
-            <span className={`absolute left-0 block h-0.5 w-6 bg-current transition ${open ? "top-1.5 -rotate-45" : "top-3"}`} />
-          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+          </svg>
         </button>
       </div>
-
-      {open && (
-        <nav className="border-t border-slate-100 bg-white md:hidden">
-          <ul className="mx-auto max-w-6xl px-4 py-2">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="block border-b border-slate-50 py-3 text-slate-700"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-            <li className="py-3">
-              <a
-                href={`tel:${company.tel.replace(/-/g, "")}`}
-                className="block rounded-full bg-sky-600 px-5 py-2.5 text-center font-semibold text-white"
-              >
-                電話する {company.tel}
-              </a>
-            </li>
-          </ul>
-        </nav>
-      )}
+      <div className={`mnav${open ? " open" : ""}`}>
+        {nav.map((n) => (
+          <a key={n.href} href={n.href} onClick={() => setOpen(false)}>
+            {n.label}
+          </a>
+        ))}
+        <a href="#contact" onClick={() => setOpen(false)}>
+          CONTACT
+        </a>
+      </div>
     </header>
   );
 }

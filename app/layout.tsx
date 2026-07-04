@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import "./site.css";
 import { company } from "./lib/company";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: ["300", "400", "500", "600", "700", "900"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: `${company.name} | 北九州の解体・不動産・リフォーム`,
+    default: `${company.name} | 北九州の解体・土地開発・リフォーム`,
     template: `%s | ${company.name}`,
   },
   description: company.description,
@@ -22,13 +23,12 @@ export const metadata: Metadata = {
     "北九州",
     "門司区",
     "土地開発",
-    "不動産売買",
     "リフォーム",
     "リノベーション",
     company.name,
   ],
   openGraph: {
-    title: `${company.name} | 北九州の解体・不動産・リフォーム`,
+    title: `${company.name} | 北九州の解体・土地開発・リフォーム`,
     description: company.description,
     type: "website",
     locale: "ja_JP",
@@ -63,7 +63,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${notoSansJP.variable} h-full scroll-smooth antialiased`}>
-      <body className="min-h-full flex flex-col bg-white font-sans text-slate-800">
+      <body className="min-h-full font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
