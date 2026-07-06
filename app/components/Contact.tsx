@@ -2,7 +2,8 @@ import { company } from "@/app/lib/company";
 import { ContactForm } from "./ContactForm";
 
 export function Contact() {
-  const mapQuery = encodeURIComponent(`${company.name} ${company.address}`);
+  // 会社名を含めると別施設に誤マッチするため、郵便番号＋住所のみで地図を連動
+  const mapQuery = encodeURIComponent(`〒${company.postalCode} ${company.address}`);
   return (
     <section id="contact" className="contact">
       <div className="wrap">
