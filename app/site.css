@@ -92,7 +92,7 @@
 .vg .works .gal{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:12px; margin-top:50px; }
 .vg .works .g{ border-radius:4px; overflow:hidden; }
 .vg .works .g.big{ grid-column:span 2; grid-row:span 2; }
-.vg .works .g .img{ height:100%; }
+.vg .works .g .img{ height:100%; filter:saturate(.55) contrast(.97) brightness(.97) grayscale(.16); }
 .vg .works .more{ text-align:center; margin-top:40px; }
 .vg .btn-ghost{ display:inline-block; border:1px solid var(--green); color:var(--green2); padding:15px 46px; border-radius:2px; text-decoration:none; letter-spacing:.1em; font-size:13px; transition:.25s; cursor:pointer; }
 .vg .btn-ghost:hover{ background:var(--green); color:#fff; }

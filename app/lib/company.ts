@@ -76,18 +76,18 @@ export const measures = [
 
 // 安全対策
 export const safety = [
-  { no: "01", title: "有資格者による現場管理", description: "一級土木施工管理技士が計画から施工まで管理。", image: "/designs/img/demo2.jpg" },
-  { no: "02", title: "アスベスト事前調査", description: "建築物石綿含有建材調査者が法令に基づき調査。", image: "/designs/img/interior.jpg" },
-  { no: "03", title: "適正な分別解体", description: "廃棄物を適正に分別・処理し、環境にも配慮。", image: "/designs/img/scrap.jpg" },
+  { no: "01", title: "有資格者による現場管理", description: "一級土木施工管理技士が計画から施工まで管理。", image: "/designs/img/1.jpg" },
+  { no: "02", title: "アスベスト事前調査", description: "建築物石綿含有建材調査者が法令に基づき調査。", image: "/designs/img/2.jpg" },
+  { no: "03", title: "適正な分別解体", description: "廃棄物を適正に分別・処理し、環境にも配慮。", image: "/designs/img/3.jpg" },
 ];
 
 // 施工実績ギャラリー（※写真は差し替え前提）
 export const works = [
-  { image: "/designs/img/demo1.jpg", big: true },
-  { image: "/designs/img/excavator.jpg", big: false },
-  { image: "/designs/img/rubble.jpg", big: false },
-  { image: "/designs/img/land.jpg", big: false },
-  { image: "/designs/img/truck.jpg", big: false },
+  { image: "/designs/img/001.jpg", big: true },
+  { image: "/designs/img/01.jpg", big: false },
+  { image: "/designs/img/3.jpg", big: false },
+  { image: "/designs/img/003.jpg", big: false },
+  { image: "/designs/img/1.jpg", big: false },
 ];
 
 // ナビゲーション
