@@ -20,7 +20,7 @@ export function About() {
           <div
             className="a ph"
             style={{
-              backgroundImage: "url('/designs/img/excavator.jpg')",
+              backgroundImage: "url('/designs/img/01.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

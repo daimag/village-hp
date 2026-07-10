@@ -35,43 +35,43 @@ export const services: Service[] = [
     description:
       "戸建住宅から店舗・ビルまで、木造・鉄骨・RC造に対応。近隣に配慮した安全管理と適正な分別解体を徹底します。",
     icon: "demolition",
-    image: "/designs/img/demo2.jpg",
+    image: "/designs/img/001.jpg",
   },
   {
     title: "解体業コンサルタント",
     description:
       "解体計画の立案から届出・許認可、見積の精査まで。一級土木施工管理技士が最適なプランをご提案します。",
     icon: "consulting",
-    image: "/designs/img/worker.jpg",
+    image: "/designs/img/002.jpg",
   },
   {
     title: "土地開発",
     description:
       "造成・整地・インフラ整備まで、土地の価値を最大化する開発をトータルでサポートします。",
     icon: "land",
-    image: "/designs/img/land.jpg",
+    image: "/designs/img/003.jpg",
   },
   {
     title: "リフォーム事業",
     description:
       "水回りから外装・内装まで、住まいの困りごとを解決。暮らしやすさと資産価値の向上をお手伝いします。",
     icon: "reform",
-    image: "/designs/img/reno.jpg",
+    image: "/designs/img/004.jpg",
   },
   {
     title: "リノベーション事業",
     description:
       "中古住宅を新たな価値へ。ライフスタイルに合わせた空間づくりをデザインから施工まで一貫して行います。",
     icon: "renovation",
-    image: "/designs/img/interior.jpg",
+    image: "/designs/img/005.jpg",
   },
 ];
 
 // 近隣対策（他社に負けない点：ヒアリング反映）
 export const measures = [
-  { no: "01", title: "事前に工事内容をご説明", description: "着手前に周辺の皆さまへ工事内容をご説明します。", image: "/designs/img/worker.jpg" },
-  { no: "02", title: "現場周りの定期清掃", description: "工事中も現場周りの清掃を徹底し、きれいに保ちます。", image: "/designs/img/reno.jpg" },
-  { no: "03", title: "ご近所様へのあいさつ徹底", description: "着手前・完了後のあいさつ回りで信頼関係を大切に。", image: "/designs/img/truck.jpg" },
+  { no: "01", title: "事前に工事内容をご説明", description: "着手前に周辺の皆さまへ工事内容をご説明します。", image: "/designs/img/0001.jpg" },
+  { no: "02", title: "現場周りの定期清掃", description: "工事中も現場周りの清掃を徹底し、きれいに保ちます。", image: "/designs/img/0002.jpg" },
+  { no: "03", title: "ご近所様へのあいさつ徹底", description: "着手前・完了後のあいさつ回りで信頼関係を大切に。", image: "/designs/img/0003.jpg" },
 ];
 
 // 安全対策

@@ -69,7 +69,8 @@
 .vg .service .kick .t,.vg .service .lead{ color:#fff; } .vg .service .kick .t .sl{ color:#c4f3d2; } .vg .service .kick .j{ color:#bfeccb; }
 .vg .service .grid{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:50px; }
 .vg .service .card{ position:relative; height:260px; border-radius:5px; overflow:hidden; display:flex; align-items:flex-end; text-decoration:none; }
-.vg .service .card .img{ position:absolute; inset:0; transition:.5s; }
+.vg .service .card .img{ position:absolute; inset:0; transition:.5s;
+  filter:saturate(.62) contrast(.97) brightness(.97) grayscale(.12); }
 .vg .service .card:hover .img{ transform:scale(1.06); }
 .vg .service .card .meta{ position:relative; width:100%; padding:20px; color:#fff; background:linear-gradient(transparent, rgba(0,0,0,.62)); }
 .vg .service .card .no{ font-family:"Helvetica Neue",Arial; font-size:12px; letter-spacing:.2em; color:#c4f3d2; }
