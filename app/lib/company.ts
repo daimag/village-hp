@@ -251,6 +251,15 @@ export const estateFlow = [
   { no: "06", title: "完了・お支払い", description: "作業完了。ご希望に応じて、解体・整地のご相談も承ります。" },
 ];
 
+// 対応した建物の実例（写真ギャラリー。施工例ページ用）
+export const caseGallery = [
+  { src: "/works/g3.jpg", caption: "大型2階建て住宅の解体" },
+  { src: "/works/g4.jpg", caption: "3階建て建物の解体" },
+  { src: "/works/g1.jpg", caption: "木造平屋（古家）の解体" },
+  { src: "/works/g2.jpg", caption: "庭木のある住宅の解体" },
+  { src: "/works/g5.jpg", caption: "解体後の整地（更地）" },
+];
+
 // ナビゲーション（完全日本語。各項目を独立ページへ直結。トップは各ページへの入口）
 export const nav = [
   { href: "/about", label: "会社紹介" },

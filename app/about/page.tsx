@@ -56,6 +56,28 @@ export default function AboutPage() {
               </p>
             </div>
 
+            <div className="ab-team">
+              <div
+                className="ab-team-img ph"
+                style={{
+                  backgroundImage: "url('/company/team.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center top",
+                }}
+                role="img"
+                aria-label="代表と息子"
+              />
+              <div className="ab-team-text">
+                <div className="gh en">FAMILY BUSINESS</div>
+                <h2>家族で、地域の解体に向き合っています</h2>
+                <p>
+                  代表と息子。少人数だからこそ、一件一件のご依頼に丁寧に向き合えます。
+                  「顔の見える会社」として、はじめての方や個人のお客様にも
+                  安心してご相談いただけるよう努めています。
+                </p>
+              </div>
+            </div>
+
             <div className="ab-strength">
               <h2>ヴィレッジの3つの強み</h2>
               <div className="cardgrid">

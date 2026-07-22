@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { cases } from "@/app/lib/company";
+import { cases, caseGallery } from "@/app/lib/company";
 import { SubHeader } from "../components/SubHeader";
 import { CaseCard } from "../components/CaseCard";
 import { Footer } from "../components/Footer";
@@ -41,6 +41,25 @@ export default function WorksPage() {
             <p className="note">
               ※費用は建物の規模・構造・立地・残置物の量などにより異なります。表示は一例（目安）です。正確な費用は無料お見積もりにてご案内します。
             </p>
+
+            <div className="case-gallery">
+              <h2>対応した建物の実例</h2>
+              <div className="cg-grid">
+                {caseGallery.map((g, i) => (
+                  <figure key={i}>
+                    <div
+                      className="img ph"
+                      style={{
+                        backgroundImage: `url('${g.src}')`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    />
+                    <figcaption>{g.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
 
             <div className="more">
               <Link className="btn-fill" href="/#contact">
