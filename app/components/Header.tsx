@@ -3,19 +3,22 @@
 import { useEffect, useState } from "react";
 import { company, nav } from "@/app/lib/company";
 
-export function Header() {
-  const [solid, setSolid] = useState(false);
+export function Header({ solid: forceSolid = false }: { solid?: boolean } = {}) {
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > window.innerHeight - 90);
+    if (forceSolid) return;
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight - 90);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [forceSolid]);
+
+  const solid = forceSolid || scrolled;
 
   return (
-    <header className={`hd${solid ? " solid" : ""}`}>
+    <header className={`hd${solid ? " solid" : ""}${forceSolid ? " sub" : ""}`}>
       <div className="in">
         <a className="brand" href="/" aria-label={company.name}>
           <span className="vmark">V</span>

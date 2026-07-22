@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, company } from "@/app/lib/company";
+import { services } from "@/app/lib/company";
+import { SubHeader } from "../../components/SubHeader";
 import { ServiceIcon } from "../../components/ServiceIcon";
 import { Footer } from "../../components/Footer";
 
@@ -32,20 +33,7 @@ export default async function ServiceDetail({
 
   return (
     <div className="vg">
-      <header className="subhd">
-        <div className="in">
-          <Link className="brand" href="/" aria-label={company.name}>
-            <span className="vmark">V</span>
-            <span className="bt">
-              VILLAGE
-              <small>{company.name}</small>
-            </span>
-          </Link>
-          <Link className="back" href="/#service">
-            ← 事業内容へ戻る
-          </Link>
-        </div>
-      </header>
+      <SubHeader />
 
       <main>
         <section className="svc-detail">

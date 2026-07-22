@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { company } from "@/app/lib/company";
+import { SubHeader } from "../components/SubHeader";
 import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
@@ -27,20 +27,7 @@ const strengths = [
 export default function AboutPage() {
   return (
     <div className="vg">
-      <header className="subhd">
-        <div className="in">
-          <Link className="brand" href="/" aria-label={company.name}>
-            <span className="vmark">V</span>
-            <span className="bt">
-              VILLAGE
-              <small>{company.name}</small>
-            </span>
-          </Link>
-          <Link className="back" href="/">
-            ← トップへ戻る
-          </Link>
-        </div>
-      </header>
+      <SubHeader />
 
       <main>
         <section className="about-page">

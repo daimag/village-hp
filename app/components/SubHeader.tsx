@@ -1,27 +1,7 @@
-import Link from "next/link";
-import { company } from "@/app/lib/company";
+import { Header } from "./Header";
 
-export function SubHeader({
-  back = "/",
-  backLabel = "← トップへ戻る",
-}: {
-  back?: string;
-  backLabel?: string;
-}) {
-  return (
-    <header className="subhd">
-      <div className="in">
-        <Link className="brand" href="/" aria-label={company.name}>
-          <span className="vmark">V</span>
-          <span className="bt">
-            VILLAGE
-            <small>{company.name}</small>
-          </span>
-        </Link>
-        <Link className="back" href={back}>
-          {backLabel}
-        </Link>
-      </div>
-    </header>
-  );
+// サブページ用ヘッダー：トップと同じ本ヘッダー（ナビ付き）を常時ソリッドで表示。
+// 旧APIの back / backLabel は受け取るが未使用（呼び出し側の型エラー回避のため）。
+export function SubHeader(_props?: { back?: string; backLabel?: string }) {
+  return <Header solid />;
 }
