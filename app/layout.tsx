@@ -12,27 +12,40 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://village2024.jp"),
   title: {
-    default: `${company.name} | 北九州の解体・土地開発・リフォーム`,
+    default: `${company.name} | 北九州・門司区の解体／遺品整理／リフォーム`,
     template: `%s | ${company.name}`,
   },
   description: company.description,
   keywords: [
     "解体工事",
-    "解体業",
-    "北九州",
+    "解体 門司",
+    "北九州 解体",
+    "空き家 解体",
+    "遺品整理",
+    "生前整理",
     "門司区",
     "土地開発",
     "リフォーム",
     "リノベーション",
     company.name,
   ],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: `${company.name} | 北九州の解体・土地開発・リフォーム`,
+    title: `${company.name} | 北九州・門司区の解体／遺品整理／リフォーム`,
     description: company.description,
+    url: "https://village2024.jp",
     type: "website",
     locale: "ja_JP",
     siteName: company.name,
+    images: [{ url: "/ogp.png", width: 1200, height: 630, alt: company.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${company.name} | 北九州・門司区の解体／遺品整理／リフォーム`,
+    description: company.description,
+    images: ["/ogp.png"],
   },
   robots: { index: true, follow: true },
 };
