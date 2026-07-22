@@ -1,4 +1,5 @@
 import { company, nav } from "@/app/lib/company";
+import { LogoMark } from "./LogoMark";
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
         <div className="top">
           <div>
             <div className="brand">
-              <span className="vmark">V</span>
+              <LogoMark className="vlogo" variant="white" />
               <span className="bt">
                 VILLAGE
                 <small>{company.name}</small>

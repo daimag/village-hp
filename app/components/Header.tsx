@@ -22,7 +22,7 @@ export function Header({ solid: forceSolid = false }: { solid?: boolean } = {}) 
     <header className={`hd${solid ? " solid" : ""}${forceSolid ? " sub" : ""}`}>
       <div className="in">
         <a className="brand" href="/" aria-label={company.name}>
-          <LogoMark className="vlogo" />
+          <LogoMark className="vlogo" variant={solid ? "color" : "white"} />
           <span className="bt">
             VILLAGE
             <small>{company.name}</small>

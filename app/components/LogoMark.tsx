@@ -1,5 +1,15 @@
 // 名刺ロゴ（V マーク）を忠実に再現したSVG。緑＋青のシェブロン＋黒スウッシュ。
-export function LogoMark({ className = "" }: { className?: string }) {
+// variant="white" は濃色背景用の白単色版。
+export function LogoMark({
+  className = "",
+  variant = "color",
+}: {
+  className?: string;
+  variant?: "color" | "white";
+}) {
+  const g = variant === "white" ? "#ffffff" : "#5aa63c";
+  const b = variant === "white" ? "#ffffff" : "#3b87b7";
+  const s = variant === "white" ? "#ffffff" : "#1a1a1a";
   return (
     <svg
       className={className}
@@ -9,13 +19,13 @@ export function LogoMark({ className = "" }: { className?: string }) {
       aria-label="株式会社ヴィレッジ ロゴ"
     >
       {/* 緑：左シェブロン（上下2枚） */}
-      <polygon points="24,8 44,8 51,45 32.8,45" fill="#5aa63c" />
-      <polygon points="34.5,52 52.4,52 60,92 44,92" fill="#5aa63c" />
+      <polygon points="24,8 44,8 51,45 32.8,45" fill={g} />
+      <polygon points="34.5,52 52.4,52 60,92 44,92" fill={g} />
       {/* 青：右シェブロン（上下2枚） */}
-      <polygon points="76,8 96,8 87.2,45 68.97,45" fill="#3b87b7" />
-      <polygon points="67.6,52 85.5,52 76,92 60,92" fill="#3b87b7" />
+      <polygon points="76,8 96,8 87.2,45 68.97,45" fill={b} />
+      <polygon points="67.6,52 85.5,52 76,92 60,92" fill={b} />
       {/* 黒スウッシュ */}
-      <path d="M10,62 C10,40 44,30 104,12 C60,34 30,44 18,54 L12,58 Z" fill="#1a1a1a" />
+      <path d="M10,62 C10,40 44,30 104,12 C60,34 30,44 18,54 L12,58 Z" fill={s} />
     </svg>
   );
 }

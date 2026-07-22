@@ -22,8 +22,8 @@
   background:linear-gradient(135deg,#7be3a0,var(--green)); }
 .vg .brand .bt{ line-height:1.1; } .vg .brand .bt small{ display:block; font-size:9px; letter-spacing:.24em; font-weight:400; opacity:.85; }
 .vg .brand .vlogo{ width:42px; height:34px; display:block; flex:none; }
-/* ヒーロー上（透過ヘッダー）ではロゴが暗い背景に埋もれないよう白のにじみを付与 */
-.vg .hd:not(.solid) .brand .vlogo{ filter:drop-shadow(0 0 3px rgba(255,255,255,.85)); }
+/* ヒーロー上（透過ヘッダー）は白ロゴ。明るい背景でも見えるよう軽い影を付与 */
+.vg .hd:not(.solid) .brand .vlogo{ filter:drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
 .vg .hd nav{ display:flex; gap:26px; margin-left:auto; font-size:12.5px; letter-spacing:.08em; color:#eef2f0; transition:.3s; }
 .vg .hd nav a{ text-decoration:none; } .vg .hd nav a:hover{ color:var(--green); }
 .vg .hd .cbtn{ border:1px solid rgba(255,255,255,.5); padding:9px 20px; border-radius:2px; font-size:12px; letter-spacing:.08em; text-decoration:none; color:#fff; transition:.3s; white-space:nowrap; }
