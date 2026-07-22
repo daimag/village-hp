@@ -43,6 +43,26 @@ next-env.d.ts
 # 内部資料（名刺スキャン等）
 /_reference/
 
+# 打合せ録音（容量大）
+*.m4a
+
+# 認証情報・スクリーンショット（絶対にコミットしない）
+/Client_IDなど.txt
+/village_github_gmail_com.txt
+/Gitアカウント.png
+
+# Officeの一時ロックファイル
+~$*
+
+# ローカルのエージェント設定
+/.claude/
+
 # メール設定一覧（パスワードを含むため非公開）
 /docs/メール設定一覧.md
 /docs/メール設定一覧.docx
+
+# 開発環境 引き渡し資料 一式（GitHub/Gmailのパスワードを含むため非公開）
+/docs/開発環境マニュアル.md
+/docs/ヴィレッジ開発環境_引き渡し資料.pptx
+/docs/generate_handover_pptx.py
+/docs/セットアップ手順書_別PC_HP公開まで*

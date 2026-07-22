@@ -5,6 +5,8 @@ import { Services } from "./components/Services";
 import { Measures } from "./components/Measures";
 import { Safety } from "./components/Safety";
 import { Works } from "./components/Works";
+import { IhinPreview } from "./components/IhinPreview";
+import { UpdatesPreview } from "./components/UpdatesPreview";
 import { Contact } from "./components/Contact";
 import { Company } from "./components/Company";
 import { Footer } from "./components/Footer";
@@ -20,6 +22,8 @@ export default function Home() {
         <Measures />
         <Safety />
         <Works />
+        <IhinPreview />
+        <UpdatesPreview />
         <Contact />
         <Company />
       </main>

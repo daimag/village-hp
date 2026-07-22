@@ -1,27 +1,8 @@
-import { company } from "@/app/lib/company";
+import Link from "next/link";
+import { greeting } from "@/app/lib/company";
+import { CompanyTable } from "./CompanyTable";
 
 export function Company() {
-  const rows: [string, React.ReactNode][] = [
-    ["会社名", company.name],
-    ["代表者", `${company.representativeTitle}　${company.representative}（${company.license}）`],
-    ["所在地", `〒${company.postalCode}　${company.address}`],
-    ["電話番号", company.tel],
-    ["営業時間", company.businessHours],
-    ["設立", company.established],
-    [
-      "事業内容",
-      "建物解体工事 / 解体業コンサルタント / 土地開発 / リフォーム事業 / リノベーション事業",
-    ],
-    [
-      "許可・登録",
-      <>
-        {company.demolitionLicense}
-        <br />
-        {company.asbestosLicense}
-      </>,
-    ],
-  ];
-
   return (
     <section id="company" className="company">
       <div className="wrap">
@@ -31,16 +12,37 @@ export function Company() {
           </p>
           <div className="j">会社概要</div>
         </div>
-        <div className="box">
-          <dl style={{ margin: 0 }}>
-            {rows.map(([label, value]) => (
-              <div className="row" key={label}>
-                <dt>{label}</dt>
-                <dd>{value}</dd>
-              </div>
-            ))}
-          </dl>
+
+        {/* 代表あいさつ（抜粋） */}
+        <div className="greet">
+          <div className="greet-figure">
+            <div
+              className="greet-img ph"
+              style={{
+                backgroundImage: `url('${greeting.image}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center top",
+              }}
+              role="img"
+              aria-label={`${greeting.title} ${greeting.name}`}
+            />
+            <div className="sign">
+              <span className="role">{greeting.title}</span>
+              <span className="nm">{greeting.name}</span>
+            </div>
+          </div>
+          <div className="greet-body">
+            <div className="gh en">MESSAGE</div>
+            <h3>{greeting.lead}</h3>
+            <p>{greeting.body[0]}</p>
+            <p>{greeting.body[1]}</p>
+            <Link className="btn-ghost" href="/company">
+              代表あいさつ・会社案内を見る →
+            </Link>
+          </div>
         </div>
+
+        <CompanyTable />
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export function Header() {
   return (
     <header className={`hd${solid ? " solid" : ""}`}>
       <div className="in">
-        <a className="brand" href="#top" aria-label={company.name}>
+        <a className="brand" href="/" aria-label={company.name}>
           <span className="vmark">V</span>
           <span className="bt">
             VILLAGE
@@ -31,8 +31,8 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <a className="cbtn" href="#contact">
-          CONTACT
+        <a className="cbtn" href="/#contact">
+          お問い合わせ
         </a>
         <button
           type="button"
@@ -52,8 +52,8 @@ export function Header() {
             {n.label}
           </a>
         ))}
-        <a href="#contact" onClick={() => setOpen(false)}>
-          CONTACT
+        <a href="/#contact" onClick={() => setOpen(false)}>
+          お問い合わせ
         </a>
       </div>
     </header>

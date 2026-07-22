@@ -1,6 +1,9 @@
-import { works } from "@/app/lib/company";
+import Link from "next/link";
+import { cases } from "@/app/lib/company";
+import { CaseCard } from "./CaseCard";
 
 export function Works() {
+  const preview = cases.slice(0, 2);
   return (
     <section id="works" className="works">
       <div className="wrap">
@@ -8,23 +11,25 @@ export function Works() {
           <p className="t en">
             <span className="sl">/</span> WORKS
           </p>
-          <div className="j">施工実績</div>
+          <div className="j">解体の施工例</div>
         </div>
-        <p className="lead">これまでの施工事例をご紹介します（※実績写真は掲載準備中）。</p>
-        <div className="gal">
-          {works.map((w, i) => (
-            <div key={i} className={`g${w.big ? " big" : ""}`}>
-              <div
-                className="img ph"
-                style={{ backgroundImage: `url('${w.image}')`, backgroundSize: "cover", backgroundPosition: "center" }}
-              />
-            </div>
+        <p className="lead">
+          <strong>ご家庭・空き家の解体こそ、私たちの得意分野です。</strong>
+          「実家が空き家になった」「一軒だけ解体したい」——そんな個人のお客様の解体を、
+          ビフォーアフターと費用の目安でご紹介します。
+        </p>
+        <div className="cases">
+          {preview.map((c) => (
+            <CaseCard key={c.id} c={c} />
           ))}
         </div>
+        <p className="note">
+          ※費用は建物の規模・構造・立地などにより異なります。表示は一例（目安）です。
+        </p>
         <div className="more">
-          <a className="btn-ghost" href="#contact">
-            施工実績についてのお問い合わせ
-          </a>
+          <Link className="btn-fill" href="/works">
+            施工例をもっと見る →
+          </Link>
         </div>
       </div>
     </section>

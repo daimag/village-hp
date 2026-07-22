@@ -11,16 +11,13 @@ export function Measures() {
           <div className="j">近隣対策</div>
         </div>
         <p className="lead">
-          解体工事は、ご近所様への配慮が第一。工事前のご説明から、あいさつ回り・清掃まで徹底します。
+          解体工事は、ご近所様への配慮が第一。
+          <strong>{measures.length}つの取り組み</strong>で、騒音・粉じん・トラブルを未然に防ぎます。
         </p>
-        <div className="trio">
+        <div className="mgrid">
           {measures.map((m) => (
-            <div className="it" key={m.no}>
-              <div
-                className="img ph"
-                style={{ backgroundImage: `url('${m.image}')`, backgroundSize: "cover", backgroundPosition: "center" }}
-              />
-              <div className="no">{m.no}</div>
+            <div className="mcard" key={m.no}>
+              <div className="mno en">{m.no}</div>
               <h3>{m.title}</h3>
               <p>{m.description}</p>
             </div>

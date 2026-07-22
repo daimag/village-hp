@@ -12,12 +12,14 @@
 
 ## 開発
 
+パッケージマネージャは **pnpm** を使用します。
+
 ```bash
-npm install      # 依存関係のインストール
-npm run dev      # 開発サーバー起動（http://localhost:3000）
-npm run build    # 本番ビルド
-npm run start    # 本番サーバー起動
-npm run lint     # ESLint
+pnpm install     # 依存関係のインストール
+pnpm dev         # 開発サーバー起動（http://localhost:3000）
+pnpm build       # 本番ビルド
+pnpm start       # 本番サーバー起動
+pnpm lint        # ESLint
 ```
 
 ## 構成

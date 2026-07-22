@@ -1,0 +1,53 @@
+# 株式会社ヴィレッジ 投稿管理（Decap CMS）設定
+# 投稿内容は GitHub のコンテンツ専用リポジトリに保存され、Vercel が自動で再デプロイ → 公開されます。
+backend:
+  name: github
+  # ↓ 記事だけを置く「コンテンツ専用リポジトリ」。コード本体とは別。
+  repo: daimag/village-hp-content
+  branch: main
+  # ↓ 公開ドメイン（ログイン認証の入口）
+  base_url: https://village2024.jp
+  auth_endpoint: /api/auth
+
+# 画像のアップロード先（コンテンツリポジトリ内の uploads/）
+media_folder: uploads
+public_folder: /uploads
+
+locale: ja
+
+collections:
+  - name: news
+    label: 記事・お知らせ
+    label_singular: 投稿
+    description: 「記事（ブログ）」と「お知らせ」を投稿・編集・削除できます。
+    folder: news
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date}}　【{{category}}】{{title}}"
+    sortable_fields:
+      - date
+      - title
+      - category
+    view_groups:
+      - label: 区分で分類
+        field: category
+    view_filters:
+      - label: 記事
+        field: category
+        pattern: 記事
+      - label: お知らせ
+        field: category
+        pattern: お知らせ
+    fields:
+      - { name: date, label: 投稿日, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { name: title, label: タイトル, widget: string }
+      - name: category
+        label: 区分
+        widget: select
+        default: お知らせ
+        options:
+          - 記事
+          - お知らせ
+      - { name: thumbnail, label: 画像（1枚・任意）, widget: image, required: false }
+      - { name: body, label: 本文（Markdown）, widget: markdown, required: false }

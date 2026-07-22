@@ -27,20 +27,20 @@
 - **TypeScript**
 - **Tailwind CSS v4**
 - **Noto Sans JP**（Google Fonts）
-- Node.js v24 / npm 11
+- Node.js v24 / **pnpm**（パッケージマネージャ。`packageManager` 指定・`corepack enable` で有効化）
 
 ### 開発コマンド
 
 ```bash
 cd C:\Users\user\Desktop\village
-npm install      # 初回のみ（依存インストール）
-npm run dev      # 開発サーバー → http://localhost:3000
-npm run build    # 本番ビルド
-npm run start    # 本番サーバー
-npm run lint     # ESLint
+pnpm install     # 初回のみ（依存インストール）
+pnpm dev         # 開発サーバー → http://localhost:3000
+pnpm build       # 本番ビルド
+pnpm start       # 本番サーバー
+pnpm lint        # ESLint
 ```
 
-> ⚠️ サイトを表示するには `npm run dev` の起動が必要（起動中のみ localhost:3000 が見られる）。
+> ⚠️ サイトを表示するには `pnpm dev` の起動が必要（起動中のみ localhost:3000 が見られる）。
 
 ---
 

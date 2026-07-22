@@ -21,19 +21,19 @@ export function Footer() {
           </div>
           <nav className="fnav">
             <div>
-              {nav.slice(0, 3).map((n) => (
+              {nav.slice(0, 4).map((n) => (
                 <a key={n.href} href={n.href}>
                   {n.label}
                 </a>
               ))}
             </div>
             <div>
-              {nav.slice(3).map((n) => (
+              {nav.slice(4).map((n) => (
                 <a key={n.href} href={n.href}>
                   {n.label}
                 </a>
               ))}
-              <a href="#contact">CONTACT</a>
+              <a href="/#contact">お問い合わせ</a>
             </div>
           </nav>
         </div>

@@ -7,6 +7,6 @@
 
 要点:
 - Next.js 16 + TypeScript + Tailwind CSS v4。会社情報は `app/lib/company.ts` に一元管理。
-- 表示確認は `npm run dev`（http://localhost:3000）。
+- パッケージマネージャは **pnpm**。表示確認は `pnpm dev`（http://localhost:3000）。
 - 客先ヒアリングシート: `docs/ヴィレッジHP_ヒアリングシート.xlsx`（生成: `docs/generate_hearing_xlsx.py`、1シート構成）。
 - リモート: https://github.com/daimag/village-hp.git（main）。名刺スキャン `_reference/` は非公開。
