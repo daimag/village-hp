@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   estateWorries,
   estateServices,
+  estateWorkFlow,
   estateReasons,
   estatePricing,
   estateFlow,
@@ -11,6 +12,7 @@ import {
   estateGallery,
 } from "@/app/lib/company";
 import { SubHeader } from "../components/SubHeader";
+import { EstateIcon } from "../components/EstateIcon";
 import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
@@ -83,6 +85,34 @@ export default function EstateCleanupPage() {
                 <div className="ec" key={i}>
                   <h3>{s.title}</h3>
                   <p>{s.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 作業の流れ（整理→清掃→解体） */}
+        <section className="estate-work">
+          <div className="wrap">
+            <div className="kick">
+              <p className="t en">
+                <span className="sl">/</span> ONE-STOP
+              </p>
+              <div className="j">整理から解体まで、ワンストップ</div>
+            </div>
+            <p className="lead">
+              仕分け・搬出・清掃、そして<strong>建物の解体・整地まで</strong>。
+              何社も手配する必要はありません。すべて自社で、まとめてお引き受けします。
+            </p>
+            <div className="wflow">
+              {estateWorkFlow.map((s, i) => (
+                <div className="wstep" key={i}>
+                  <div className="wic">
+                    <EstateIcon icon={s.icon} className="ico" />
+                  </div>
+                  <div className="wno en">STEP {i + 1}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
                 </div>
               ))}
             </div>

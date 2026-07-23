@@ -1,11 +1,15 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
+import { Concerns } from "./components/Concerns";
 import { Services } from "./components/Services";
+import { Works } from "./components/Works";
+import { CostGuide } from "./components/CostGuide";
 import { Measures } from "./components/Measures";
 import { Safety } from "./components/Safety";
-import { Works } from "./components/Works";
 import { IhinPreview } from "./components/IhinPreview";
+import { Faq } from "./components/Faq";
+import { Area } from "./components/Area";
 import { UpdatesPreview } from "./components/UpdatesPreview";
 import { Contact } from "./components/Contact";
 import { Company } from "./components/Company";
@@ -18,11 +22,15 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Concerns />
         <Services />
+        <Works />
+        <CostGuide />
         <Measures />
         <Safety />
-        <Works />
         <IhinPreview />
+        <Faq />
+        <Area />
         <UpdatesPreview />
         <Contact />
         <Company />
