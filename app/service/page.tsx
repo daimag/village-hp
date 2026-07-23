@@ -57,7 +57,7 @@ export default function ServiceIndexPage() {
             </div>
 
             <div className="more">
-              <Link className="btn-fill" href="/#contact">
+              <Link className="btn-fill" href="/contact">
                 お問い合わせ・ご相談はこちら →
               </Link>
             </div>

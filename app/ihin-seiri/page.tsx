@@ -44,7 +44,7 @@ export default function EstateCleanupPage() {
               「実家が空き家になって片付けに困っている」——遠方にお住まいの方もお任せください。
             </p>
             <div className="more">
-              <Link className="btn-fill" href="/#contact">
+              <Link className="btn-fill" href="/contact">
                 無料お見積もり・ご相談はこちら →
               </Link>
             </div>
@@ -258,7 +258,7 @@ export default function EstateCleanupPage() {
               ))}
             </div>
             <div className="more">
-              <Link className="btn-fill" href="/#contact">
+              <Link className="btn-fill" href="/contact">
                 無料お見積もり・ご相談はこちら →
               </Link>
             </div>

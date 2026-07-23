@@ -65,7 +65,7 @@ export default async function ServiceDetail({
                     <li key={i}>{p}</li>
                   ))}
                 </ul>
-                <Link className="btn-fill" href="/#contact">
+                <Link className="btn-fill" href="/contact">
                   このサービスを相談する →
                 </Link>
               </div>

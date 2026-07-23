@@ -35,7 +35,7 @@ export function Header({ solid: forceSolid = false }: { solid?: boolean } = {}) 
             </a>
           ))}
         </nav>
-        <a className="cbtn" href="/#contact">
+        <a className="cbtn" href="/contact">
           お問い合わせ
         </a>
         <button
@@ -56,7 +56,7 @@ export function Header({ solid: forceSolid = false }: { solid?: boolean } = {}) 
             {n.label}
           </a>
         ))}
-        <a href="/#contact" onClick={() => setOpen(false)}>
+        <a href="/contact" onClick={() => setOpen(false)}>
           お問い合わせ
         </a>
       </div>

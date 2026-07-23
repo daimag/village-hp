@@ -11,7 +11,6 @@ import { IhinPreview } from "./components/IhinPreview";
 import { Faq } from "./components/Faq";
 import { Area } from "./components/Area";
 import { UpdatesPreview } from "./components/UpdatesPreview";
-import { Contact } from "./components/Contact";
 import { Company } from "./components/Company";
 import { Footer } from "./components/Footer";
 
@@ -32,7 +31,6 @@ export default function Home() {
         <Faq />
         <Area />
         <UpdatesPreview />
-        <Contact />
         <Company />
       </main>
       <Footer />

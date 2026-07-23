@@ -95,7 +95,7 @@ export default function AboutPage() {
               <Link className="btn-fill" href="/company">
                 代表あいさつ・会社概要を見る →
               </Link>
-              <Link className="btn-ghost" href="/#contact">
+              <Link className="btn-ghost" href="/contact">
                 お問い合わせ
               </Link>
             </div>

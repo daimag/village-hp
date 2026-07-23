@@ -21,7 +21,7 @@ export function Concerns() {
           片付けから解体・整地まで、地域の会社としてまとめて解決します。
         </p>
         <div className="more">
-          <a className="btn-fill" href="#contact">
+          <a className="btn-fill" href="/contact">
             まずは無料で相談する →
           </a>
         </div>

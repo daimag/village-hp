@@ -40,7 +40,7 @@ export default async function NewsDetailPage({
               <Link className="btn-ghost" href="/news">
                 お知らせ一覧へ
               </Link>
-              <Link className="btn-fill" href="/#contact">
+              <Link className="btn-fill" href="/contact">
                 お問い合わせ →
               </Link>
             </div>

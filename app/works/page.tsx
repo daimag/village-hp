@@ -62,7 +62,7 @@ export default function WorksPage() {
             </div>
 
             <div className="more">
-              <Link className="btn-fill" href="/#contact">
+              <Link className="btn-fill" href="/contact">
                 無料お見積もり・ご相談はこちら →
               </Link>
             </div>

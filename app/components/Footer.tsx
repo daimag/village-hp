@@ -34,7 +34,7 @@ export function Footer() {
                   {n.label}
                 </a>
               ))}
-              <a href="/#contact">お問い合わせ</a>
+              <a href="/contact">お問い合わせ</a>
             </div>
           </nav>
         </div>
