@@ -25,7 +25,6 @@ export function Hero() {
         </div>
       </div>
       <div className="in">
-        <div className="slash" />
         <h1 className="en">
           {company.catchphraseEn[0]}
           <br />

@@ -1,6 +1,44 @@
-type Key = "sort" | "haul" | "clean" | "demolish";
+type Key =
+  | "sort"
+  | "haul"
+  | "clean"
+  | "demolish"
+  | "living"
+  | "house"
+  | "money"
+  | "soul";
 
 const paths: Record<Key, React.ReactNode> = {
+  living: (
+    // 生前整理（人）
+    <>
+      <circle cx="12" cy="7" r="3.2" />
+      <path d="M5.5 20v-1a6.5 6.5 0 0113 0v1" />
+    </>
+  ),
+  house: (
+    // 空き家の片付け（家）
+    <>
+      <path d="M4 11l8-6 8 6" />
+      <path d="M6 10v10h12V10" />
+      <path d="M10 20v-5h4v5" />
+    </>
+  ),
+  money: (
+    // 高価買取（¥）
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M9 8l3 4 3-4" />
+      <path d="M12 12v5M9.6 13.2h4.8M9.6 15.4h4.8" />
+    </>
+  ),
+  soul: (
+    // 供養・お焚き上げ（灯）
+    <>
+      <path d="M12 3c2.5 2.5 3.5 4.5 3.5 6.8a3.5 3.5 0 01-7 0c0-1.4.6-2.4 1.5-3.3.2 1.6 2 1.6 2 0 0-1.2 0-2.3 0-3.5z" />
+      <path d="M6 20h12M8 20v-2h8v2" />
+    </>
+  ),
   sort: (
     // 仕分け（分別）
     <>

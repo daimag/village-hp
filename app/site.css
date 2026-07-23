@@ -226,6 +226,8 @@
 .vg .estate-worry,.vg .estate-gallery,.vg .estate-area,.vg .estate-faq{ background:var(--soft2); }
 .vg .cardgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:50px; }
 .vg .cardgrid .ec{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:26px 24px; border-top:3px solid var(--green); }
+.vg .cardgrid .ec .ec-ic{ width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:var(--soft); color:var(--green2); margin-bottom:14px; }
+.vg .cardgrid .ec .ec-ic .ico{ width:26px; height:26px; }
 .vg .cardgrid .ec h3{ margin:0; font-size:16.5px; font-weight:600; }
 .vg .cardgrid .ec p{ margin:10px 0 0; font-size:13.5px; color:var(--mute); }
 .vg .estate-price .box{ background:#fff; border:1px solid var(--line); border-radius:6px; overflow:hidden; margin:50px auto 0; max-width:640px; }

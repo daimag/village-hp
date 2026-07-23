@@ -192,14 +192,14 @@ export const estateWorries = [
 
 // 対応サービス
 export const estateServices = [
-  { title: "遺品整理", description: "残すもの・処分するものを、ご遺族と確認しながら一つひとつ丁寧に仕分け。搬出まで対応します。" },
-  { title: "生前整理", description: "お元気なうちに、ご本人と一緒に持ち物を整理。将来のご家族の負担を減らします。" },
-  { title: "空き家の片付け", description: "遠方の空き家の残置物もまとめて対応。遠くにお住まいの方もお任せください。" },
-  { title: "不用品回収・処分", description: "家具・家電・粗大ごみを適正に分別・処分。分別の手間もお任せいただけます。" },
-  { title: "高価買取", description: "再利用できる品・価値ある品は買取し、費用のご負担を軽減します。" },
-  { title: "清掃・特殊清掃", description: "搬出後のお部屋を清掃。必要に応じて専門的な清掃もご相談いただけます。" },
-  { title: "供養・お焚き上げ", description: "仏壇・お位牌・人形など、大切な品の供養・お焚き上げを手配します。" },
-  { title: "解体・整地までワンストップ", description: "片付け後、そのまま建物の解体・整地まで自社で対応。何社も探す必要はありません。" },
+  { icon: "sort" as const, title: "遺品整理", description: "残すもの・処分するものを、ご遺族と確認しながら一つひとつ丁寧に仕分け。搬出まで対応します。" },
+  { icon: "living" as const, title: "生前整理", description: "お元気なうちに、ご本人と一緒に持ち物を整理。将来のご家族の負担を減らします。" },
+  { icon: "house" as const, title: "空き家の片付け", description: "遠方の空き家の残置物もまとめて対応。遠くにお住まいの方もお任せください。" },
+  { icon: "haul" as const, title: "不用品回収・処分", description: "家具・家電・粗大ごみを適正に分別・処分。分別の手間もお任せいただけます。" },
+  { icon: "money" as const, title: "高価買取", description: "再利用できる品・価値ある品は買取し、費用のご負担を軽減します。" },
+  { icon: "clean" as const, title: "清掃・特殊清掃", description: "搬出後のお部屋を清掃。必要に応じて専門的な清掃もご相談いただけます。" },
+  { icon: "soul" as const, title: "供養・お焚き上げ", description: "仏壇・お位牌・人形など、大切な品の供養・お焚き上げを手配します。" },
+  { icon: "demolish" as const, title: "解体・整地までワンストップ", description: "片付け後、そのまま建物の解体・整地まで自社で対応。何社も探す必要はありません。" },
 ];
 
 // 選ばれる理由

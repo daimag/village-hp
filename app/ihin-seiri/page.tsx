@@ -83,6 +83,9 @@ export default function EstateCleanupPage() {
             <div className="cardgrid">
               {estateServices.map((s, i) => (
                 <div className="ec" key={i}>
+                  <div className="ec-ic">
+                    <EstateIcon icon={s.icon} className="ico" />
+                  </div>
                   <h3>{s.title}</h3>
                   <p>{s.description}</p>
                 </div>
