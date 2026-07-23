@@ -47,7 +47,12 @@ export const metadata: Metadata = {
     description: company.description,
     images: ["/ogp.png"],
   },
-  robots: { index: true, follow: true },
+  // ⚠️ 公開前：検索エンジンに載せない設定。正式公開時に index:true / follow:true へ戻す。
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
+  },
 };
 
 const jsonLd = {
