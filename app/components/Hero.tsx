@@ -32,7 +32,7 @@ export function Hero() {
         </h1>
         <div className="jp">{company.catchphraseJp}</div>
         <p>
-          北九州・門司区を拠点に、解体工事・土地開発・リフォームをワンストップで。ひとつひとつの現場に、誠実に向き合います。
+          北九州を拠点に、解体工事・土地開発・リフォームをワンストップで。ひとつひとつの現場に、誠実に向き合います。
         </p>
       </div>
       <div className="scroll en">SCROLL</div>

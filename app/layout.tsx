@@ -14,7 +14,7 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL("https://village2024.jp"),
   title: {
-    default: `${company.name} | 北九州・門司区の解体／遺品整理／リフォーム`,
+    default: `${company.name} | 北九州の解体／遺品整理／リフォーム`,
     template: `%s | ${company.name}`,
   },
   description: company.description,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${company.name} | 北九州・門司区の解体／遺品整理／リフォーム`,
+    title: `${company.name} | 北九州の解体／遺品整理／リフォーム`,
     description: company.description,
     url: "https://village2024.jp",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${company.name} | 北九州・門司区の解体／遺品整理／リフォーム`,
+    title: `${company.name} | 北九州の解体／遺品整理／リフォーム`,
     description: company.description,
     images: ["/ogp.png"],
   },
