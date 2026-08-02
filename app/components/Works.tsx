@@ -24,7 +24,7 @@ export function Works() {
           ))}
         </div>
         <p className="note">
-          ※費用は建物の規模・構造・立地などにより異なります。表示は一例（目安）です。
+          ※掲載の工事金・工事日数は実際の施工実績です。費用は建物の規模・構造・立地などにより異なります。
         </p>
         <div className="more">
           <Link className="btn-fill" href="/works">

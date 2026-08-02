@@ -211,6 +211,8 @@
 .vg .case .cbody .price{ display:flex; align-items:baseline; gap:12px; margin-top:16px; padding-top:16px; border-top:1px dashed var(--line); }
 .vg .case .cbody .price span{ font-size:12px; color:var(--mute); letter-spacing:.04em; }
 .vg .case .cbody .price b{ font-size:27px; font-weight:700; color:var(--green2); letter-spacing:.02em; }
+.vg .case .cbody .price .days{ margin-left:auto; }
+.vg .case .cbody .price .days b{ font-size:15px; color:var(--ink); margin-left:4px; }
 .vg .case .cbody p{ margin:12px 0 0; font-size:13.5px; color:var(--mute); }
 .vg .note{ text-align:center; margin-top:24px; font-size:12px; color:var(--mute); }
 

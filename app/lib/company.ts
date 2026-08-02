@@ -142,14 +142,17 @@ export const safety = [
   { no: "03", title: "適正な分別解体", description: "廃棄物を適正に分別・処理し、環境にも配慮。", image: "/designs/img/3.jpg" },
 ];
 
-// 解体の施工例（ビフォーアフター＋概算費用）
-// ※費用は一例（目安）。前後ペア・金額は社長確認のうえ更新すること。
+// 解体の施工例（ビフォーアフター＋実績値）
+// 出典：docs/20260731_受領/工事前・後.xlsx（社長より 2026-07-31 受領）
+// ※写真は同ファイルの埋め込み画像を書き出したもの（640×481）。原本入手後に差し替え推奨。
 export type DemolitionCase = {
   id: string;
   title: string;      // 例：木造2階建て住宅の解体
-  structure: string;  // 構造・規模
-  area?: string;      // エリア
-  price: string;      // 費用の目安（例）
+  structure: string;  // 構造
+  size?: string;      // 坪数
+  area?: string;      // 所在地
+  days?: string;      // 工事日数
+  price: string;      // 工事金
   before: string;
   after: string;
   comment?: string;
@@ -157,24 +160,64 @@ export type DemolitionCase = {
 
 export const cases: DemolitionCase[] = [
   {
-    id: "a",
-    title: "2階建て住宅の解体・整地",
-    structure: "木造2階建て（屋上バルコニー付）",
-    area: "北九州市門司区",
-    price: "約150万円〜",
-    before: "/works/a-before.jpg",
-    after: "/works/a-after.jpg",
-    comment: "住宅街の中の建物を、近隣に配慮しながら解体。整地して駐車場として活用できる状態に。",
+    id: "c1",
+    title: "木造住宅の解体・整地",
+    structure: "木造",
+    size: "32坪",
+    area: "北九州市八幡西区南八千代町",
+    days: "10日",
+    price: "180万円",
+    before: "/works/c1-before.jpg",
+    after: "/works/c1-after.jpg",
+    comment: "住宅が建ち並ぶ市街地での解体。前面道路の狭い立地でも、近隣に配慮しながら整地まで対応しました。",
   },
   {
-    id: "b",
-    title: "空き家（平屋）の解体・整地",
-    structure: "木造平屋（車庫付）",
-    area: "北九州市門司区",
-    price: "約100万円〜",
-    before: "/works/b-before.jpg",
-    after: "/works/b-after.jpg",
-    comment: "長く空き家だった住宅を解体。残置物の整理から整地までワンストップで対応。",
+    id: "c2",
+    title: "コンクリートブロック・木造併用住宅の解体",
+    structure: "コンクリートブロック、木造",
+    size: "30坪",
+    area: "北九州市八幡東区帆柱",
+    days: "20日",
+    price: "200万円",
+    before: "/works/c2-before.jpg",
+    after: "/works/c2-after.jpg",
+    comment: "コンクリートブロックと木造が混在する建物の解体。工期20日をかけ、周辺への影響に配慮して作業しました。",
+  },
+  {
+    id: "c3",
+    title: "鉄骨造建物の解体・整地",
+    structure: "鉄骨造",
+    size: "30坪",
+    area: "北九州市八幡東区祇園",
+    days: "11日",
+    price: "185万円",
+    before: "/works/c3-before.jpg",
+    after: "/works/c3-after.jpg",
+    comment: "鉄骨造の建物を解体し、駐車場として活用できるよう砕石を敷いて整地しました。",
+  },
+  {
+    id: "c4",
+    title: "木造住宅の解体・整地",
+    structure: "木造",
+    size: "38坪",
+    area: "北九州市門司区藤松",
+    days: "11日",
+    price: "170万円",
+    before: "/works/c4-before.jpg",
+    after: "/works/c4-after.jpg",
+    comment: "傾斜地に面した住宅の解体。搬出経路に配慮しながら作業し、更地に整えました。",
+  },
+  {
+    id: "c5",
+    title: "木造平屋の解体・整地",
+    structure: "木造",
+    size: "25坪",
+    area: "北九州市八幡西区若葉",
+    days: "10日",
+    price: "135万円",
+    before: "/works/c5-before.jpg",
+    after: "/works/c5-after.jpg",
+    comment: "築年数の経った住宅の解体。周囲の住宅に配慮しながら作業し、整地まで対応しました。",
   },
 ];
 
@@ -261,12 +304,11 @@ export const estateFlow = [
 ];
 
 // 対応した建物の実例（写真ギャラリー。施工例ページ用）
+// ※g1・g5 は上の cases（c5-before／c1-after）と同一写真のため、重複掲載を避けて除外。
 export const caseGallery = [
   { src: "/works/g3.jpg", caption: "大型2階建て住宅の解体" },
   { src: "/works/g4.jpg", caption: "3階建て建物の解体" },
-  { src: "/works/g1.jpg", caption: "木造平屋（古家）の解体" },
   { src: "/works/g2.jpg", caption: "庭木のある住宅の解体" },
-  { src: "/works/g5.jpg", caption: "解体後の整地（更地）" },
 ];
 
 // 個人向けのお悩み（集客フック）
