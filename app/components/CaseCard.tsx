@@ -23,6 +23,7 @@ export function CaseCard({ c }: { c: DemolitionCase }) {
         </div>
       </div>
       <div className="cbody">
+        {c.area && <p className="where">{c.area}</p>}
         <h3>{c.title}</h3>
         <dl className="spec">
           {c.size && (
@@ -45,7 +46,6 @@ export function CaseCard({ c }: { c: DemolitionCase }) {
         <div className="price">
           <span>工事金</span>
           <b>{c.price}</b>
-          {c.area && <span className="where">{c.area}</span>}
         </div>
         {c.comment && <p>{c.comment}</p>}
       </div>
