@@ -199,20 +199,27 @@
 .vg .cases{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:50px; }
 .vg .cases.list{ grid-template-columns:1fr; max-width:920px; margin-left:auto; margin-right:auto; }
 .vg .case{ border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; }
-.vg .case .ba{ display:grid; grid-template-columns:1fr 44px 1fr; align-items:stretch; }
+.vg .case .ba{ position:relative; display:grid; grid-template-columns:1fr 1fr; align-items:stretch; }
 .vg .case .ba figure{ margin:0; position:relative; }
-.vg .case .ba .img{ height:210px; }
+/* 写真は4:3（原本と同比率）。施工例ページ幅では約320pxまで大きく表示される */
+.vg .case .ba .img{ height:auto; aspect-ratio:4/3; min-height:210px; }
+.vg .case .ba figure.after::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:1px; background:var(--paper); z-index:2; }
 .vg .case .ba figcaption{ position:absolute; left:10px; top:10px; font-family:"Helvetica Neue",Arial; font-size:11px; letter-spacing:.12em; font-weight:700; color:#fff; background:rgba(27,33,31,.72); padding:4px 10px; border-radius:2px; }
 .vg .case .ba figure.after figcaption{ background:var(--green2); }
-.vg .case .ba .arrow{ display:grid; place-items:center; color:var(--green2); font-size:22px; background:var(--soft2); }
+.vg .case .ba .pivot{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3;
+  width:46px; height:46px; border-radius:50%; display:grid; place-items:center;
+  background:var(--paper); color:var(--green2); font-size:19px; box-shadow:0 2px 10px rgba(20,26,24,.28); }
 .vg .case .cbody{ padding:22px 26px 26px; }
 .vg .case .cbody h3{ margin:0; font-size:19px; font-weight:600; letter-spacing:.02em; }
-.vg .case .cbody .meta{ margin-top:6px; font-size:13px; color:var(--mute); }
+.vg .case .cbody .spec{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; margin:16px 0 0;
+  background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+.vg .case .cbody .spec > div{ background:var(--paper); padding:11px 14px; }
+.vg .case .cbody .spec dt{ font-size:11px; letter-spacing:.1em; color:var(--mute); }
+.vg .case .cbody .spec dd{ margin:2px 0 0; font-size:16px; font-weight:600; }
 .vg .case .cbody .price{ display:flex; align-items:baseline; gap:12px; margin-top:16px; padding-top:16px; border-top:1px dashed var(--line); }
 .vg .case .cbody .price span{ font-size:12px; color:var(--mute); letter-spacing:.04em; }
 .vg .case .cbody .price b{ font-size:27px; font-weight:700; color:var(--green2); letter-spacing:.02em; }
-.vg .case .cbody .price .days{ margin-left:auto; }
-.vg .case .cbody .price .days b{ font-size:15px; color:var(--ink); margin-left:4px; }
+.vg .case .cbody .price .where{ margin-left:auto; font-size:12.5px; text-align:right; }
 .vg .case .cbody p{ margin:12px 0 0; font-size:13.5px; color:var(--mute); }
 .vg .note{ text-align:center; margin-top:24px; font-size:12px; color:var(--mute); }
 
@@ -448,7 +455,9 @@
 }
 @media (max-width:560px){
   .vg .case .ba{ grid-template-columns:1fr; }
-  .vg .case .ba .arrow{ height:34px; }
-  .vg .case .ba .arrow span,.vg .case .ba .arrow{ transform:rotate(90deg); }
+  .vg .case .ba figure.after::before{ left:0; right:0; top:0; bottom:auto; width:auto; height:1px; }
+  .vg .case .ba .pivot{ transform:translate(-50%,-50%) rotate(90deg); }
+  .vg .case .cbody .spec{ grid-template-columns:1fr 1fr; }
+  .vg .case .cbody .price .where{ margin-left:0; width:100%; text-align:left; }
 }
 @media (prefers-reduced-motion:reduce){ .vg *{ transition:none!important; } }
