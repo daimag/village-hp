@@ -30,23 +30,21 @@ export default function AboutPage() {
       <SubHeader />
 
       <main>
-        <section className="about-page">
-          <div className="wrap">
-            <div className="kick">
+        {/* 冒頭：テキスト＋現場写真を右端まで抜く（トップのABOUTと同じ作り） */}
+        <section className="about-page split-sec">
+          <div className="wrap split">
+            <div className="split-body">
               <p className="t en">
                 <span className="sl">/</span> ABOUT
               </p>
               <div className="j">会社紹介</div>
-            </div>
-
-            <div className="ab-lead">
               <h1>
                 解体工事のイメージを、
                 <br />
                 変えていきたい。
               </h1>
               <p>
-                私たちはそんな想いでスタートした、北九州の解体会社です。一級土木施工管理技士が現場を管理し、計画から施工まで一貫対応。建築物石綿含有建材調査者も在籍し、法令に基づくアスベスト事前調査にも自社で対応します。地域の暮らしと未来を、確かな技術と誠実な仕事で支えます。
+                私たちはそんな想いでスタートした、北九州の解体会社です。一級土木施工管理技士が現場を管理し、計画から施工まで一貫対応。建築物石綿含有建材調査者も在籍し、法令に基づくアスベスト事前調査にも自社で対応します。
               </p>
               <p className="ind">
                 <strong>大きな工事だけでなく、ご家庭の解体こそ歓迎しています。</strong>
@@ -54,8 +52,29 @@ export default function AboutPage() {
                 個人のお客様のご相談を、残置物の片付けから解体・整地まで
                 <strong>ワンストップ</strong>で、親身にお受けします。
               </p>
+              <ul className="creds">
+                <li>一級土木施工管理技士</li>
+                <li>建築物石綿含有建材調査者</li>
+                <li>解体工事業登録 福岡県知事 第1456号</li>
+              </ul>
             </div>
+            <div className="split-media">
+              <div
+                className="a ph"
+                style={{
+                  backgroundImage: "url('/designs/img/002.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                role="img"
+                aria-label="解体現場で図面を確認する様子"
+              />
+            </div>
+          </div>
+        </section>
 
+        <section className="about-body">
+          <div className="wrap">
             <div className="ab-team">
               <div
                 className="ab-team-img ph"

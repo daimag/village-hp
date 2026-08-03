@@ -87,7 +87,7 @@
 .vg .split-body .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:200; letter-spacing:.08em; line-height:1; margin:0; color:var(--mute); }
 .vg .split-body .t .sl{ color:var(--green); }
 .vg .split-body .j{ font-size:11.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:10px; }
-.vg .split-body h2{ font-size:clamp(27px,3.9vw,42px); font-weight:700; line-height:1.45; margin:30px 0 0; letter-spacing:.01em; text-wrap:balance; }
+.vg .split-body h1,.vg .split-body h2{ font-size:clamp(27px,3.9vw,42px); font-weight:700; line-height:1.45; margin:30px 0 0; letter-spacing:.01em; text-wrap:balance; }
 .vg .split-body p{ margin:22px 0 0; color:var(--mute); font-size:14.5px; max-width:56ch; }
 /* 引用ブロックは塗りをやめ、左の罫だけで静かに見せる */
 .vg .split-body .ind{ margin-top:26px; background:transparent; border-left:2px solid var(--green); border-radius:0;
@@ -606,3 +606,7 @@
 
 /* サブページ先頭の split は、固定ヘッダー分だけ写真も下げる */
 .vg .hd.sub ~ main > section:first-child .split-media{ margin-top:8px; }
+
+/* /about：冒頭の split と本文セクションを分けたため、後半は上余白を詰める */
+.vg .about-body{ padding-top:0; }
+.vg .about-body .ab-team{ margin-top:0; }

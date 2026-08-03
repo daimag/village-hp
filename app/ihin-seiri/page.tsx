@@ -28,42 +28,23 @@ export default function EstateCleanupPage() {
 
       <main>
         {/* イントロ */}
-        <section className="estate-intro split-sec">
-          <div className="wrap split">
-            <div className="split-body">
+        <section className="estate-intro">
+          <div className="wrap">
+            <div className="kick">
               <p className="t en">
                 <span className="sl">/</span> ESTATE CLEANUP
               </p>
               <div className="j">遺品整理・生前整理</div>
-              <h1>
-                思い出を大切に、
-                <br />
-                心を込めて。
-              </h1>
-              <p>
-                大切なご家族が遺されたお品を、ご遺族のお気持ちに寄り添いながら丁寧に整理します。
-                仕分け・処分・買取・清掃から、そのまま建物の解体・整地まで自社でワンストップ。
-              </p>
-              <p className="ind">
-                「実家が空き家になって片付けに困っている」——
-                <strong>遠方にお住まいの方もお任せください。</strong>
-                現地確認からお立会いの日程調整まで、まとめてご相談いただけます。
-              </p>
-              <div className="more">
-                <Link className="btn-fill" href="/contact">
-                  無料お見積もり・ご相談はこちら →
-                </Link>
-              </div>
             </div>
-            <div className="split-media">
-              <div
-                className="a ph"
-                style={{
-                  backgroundImage: "url('/designs/img/interior.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
+            <p className="lead">
+              <strong>思い出を大切に、心を込めて。</strong>
+              仕分け・処分・買取・清掃から、建物の解体・整地まで自社でワンストップ。
+              遠方にお住まいの方もお任せください。
+            </p>
+            <div className="more">
+              <Link className="btn-fill" href="/contact">
+                無料お見積もり・ご相談はこちら →
+              </Link>
             </div>
           </div>
         </section>
