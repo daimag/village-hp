@@ -4,6 +4,15 @@ import { ConcernIcon } from "./ConcernIcon";
 export function Concerns() {
   return (
     <section id="concerns" className="concerns">
+      {/* 背景は受領写真（若葉の空き家）。テーマと合うため実物を使い、強めのフィルタで質感として敷く */}
+      <div
+        className="bg ph"
+        style={{
+          backgroundImage: "url('/works/c5-before.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 62%",
+        }}
+      />
       <div className="wrap">
         <div className="kick">
           <p className="t en">
