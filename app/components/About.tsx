@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section id="about">
+    <section id="about" className="about-sec">
       <div className="wrap about">
         <div>
           <p className="t en">

@@ -5,12 +5,16 @@
 .vg{
   --ink:#141a18; --mute:#485250; --line:#e6eae8; --paper:#ffffff; --soft:#eef5f0; --soft2:#f6f9f7;
   --green:#2fae55; --green2:#1f8a41; --greenD:#12331f;
+  /* 器の幅・左右余白。--bleed は「本文の端から画面の端まで」の距離。
+     full-bleed したい要素に negative margin として使う（例：margin-right:calc(-1 * var(--bleed))）*/
+  --shell:1460px; --gut:clamp(22px,4vw,64px);
+  --bleed:calc(max(0px, (100vw - var(--shell)) / 2) + var(--gut));
   color:var(--ink); font-weight:400; line-height:1.8; letter-spacing:.01em; background:var(--paper);
 }
 .vg a{ color:inherit; }
 .vg .en{ font-family:"Helvetica Neue",Arial,sans-serif; }
 /* 全画面テイスト：器を広げ、左右余白は画面幅に追従させる */
-.vg .wrap{ width:100%; max-width:1460px; margin:0 auto; padding:0 clamp(22px,4vw,64px); }
+.vg .wrap{ width:100%; max-width:var(--shell); margin:0 auto; padding:0 var(--gut); }
 .vg .ph{ display:flex; align-items:center; justify-content:center; text-align:center; background:#e4e8ee; color:#8b95a4; }
 .vg .ph.dark{ background:linear-gradient(135deg,#2b333d,#161b21); }
 .vg svg.ico{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
@@ -72,7 +76,8 @@
 
 /* about */
 /* about：見出しを主役に据え、写真側を大きく取った非対称レイアウト */
-.vg .about{ display:grid; grid-template-columns:1fr 1.12fr; gap:clamp(44px,5vw,80px); align-items:start; }
+.vg .about-sec{ overflow-x:clip; }
+.vg .about{ display:grid; grid-template-columns:1fr 1.12fr; gap:clamp(44px,5vw,80px); align-items:center; }
 /* ラベルとしての ABOUT は控えめに。主役は下の h2 */
 .vg .about .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:200; letter-spacing:.08em; line-height:1; margin:0; color:var(--mute); }
 .vg .about .t .sl{ color:var(--green); }
@@ -88,14 +93,13 @@
 .vg .about .creds li{ display:flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--soft2);
   border-radius:999px; padding:7px 15px; font-size:12.5px; font-weight:600; letter-spacing:.02em; }
 .vg .about .creds li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--green); flex:none; }
-.vg .about .imgwrap{ position:relative; padding:0 0 26px 26px; }
-/* 写真の背後にずらした緑の面を敷いて奥行きを出す */
-.vg .about .imgwrap::before{ content:""; position:absolute; left:0; bottom:0; width:56%; height:62%;
-  background:var(--soft); border-left:3px solid var(--green); border-radius:4px; }
-.vg .about .imgwrap .a{ position:relative; height:clamp(440px,44vw,660px); border-radius:4px; box-shadow:0 18px 44px rgba(20,26,24,.16); }
-.vg .about .imgwrap .tagen{ position:absolute; right:-14px; top:26px; writing-mode:vertical-rl; font-family:"Helvetica Neue",Arial;
+/* 写真は画面右端まで抜く。額縁（余白・角丸・影・背後の面）は全部やめて、
+   端が切れていること自体を見せる */
+.vg .about .imgwrap{ position:relative; padding:0; margin-right:calc(-1 * var(--bleed)); }
+.vg .about .imgwrap .a{ position:relative; height:clamp(460px,50vw,720px); border-radius:0; }
+.vg .about .imgwrap .tagen{ position:absolute; left:-15px; top:30px; writing-mode:vertical-rl; font-family:"Helvetica Neue",Arial;
   font-size:11.5px; letter-spacing:.34em; color:var(--green2); font-weight:600;
-  background:var(--paper); padding:14px 5px; border-radius:2px; }
+  background:var(--paper); padding:16px 5px; border-radius:0; }
 
 /* service */
 .vg .service{ position:relative; overflow:hidden; }
@@ -473,7 +477,10 @@
   .vg section{ padding:74px 0; }
   .vg .hd.sub ~ main > section:first-child{ padding-top:100px; }
   .vg .about,.vg .contact .grid{ grid-template-columns:1fr; gap:34px; }
-  .vg .about .imgwrap .a{ height:400px; }
+  /* 1カラムでは左右とも抜いて全幅写真に */
+  .vg .about .imgwrap{ margin-left:calc(-1 * var(--bleed)); }
+  .vg .about .imgwrap .a{ height:clamp(300px,58vw,440px); }
+  .vg .about .imgwrap .tagen{ left:auto; right:14px; top:14px; }
   .vg .worry{ grid-template-columns:1fr 1fr; }
   .vg .service .grid,.vg .trio,.vg .measures .mgrid{ grid-template-columns:1fr 1fr; }
   .vg .service .grid > .card:first-child{ grid-column:span 2; height:300px; }
