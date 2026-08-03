@@ -17,7 +17,11 @@ export function ScrollReveal() {
 
   useEffect(() => {
     const root = document.documentElement;
-    root.dataset.rvReady = "1";
+    // 演出を諦めて全部見せる（何かあっても本文が消えないための最終手段）
+    const bail = () => {
+      root.dataset.rvReady = "1";
+      root.classList.remove("rv");
+    };
 
     // カード群は、ひとかたまりではなく1枚ずつ現れるようにする。
     // 該当する入れ物は自身を即表示にして、子要素を対象へ差し替える。
@@ -25,19 +29,28 @@ export function ScrollReveal() {
       ".cases, .worry, .service .grid, .cg-grid, .cardgrid, .reasons, .trio, .measures .mgrid";
 
     const targets: HTMLElement[] = [];
-    document.querySelectorAll<HTMLElement>(".vg main .wrap > *").forEach((block) => {
-      const container = block.matches(ITEM_CONTAINERS)
-        ? block
-        : block.querySelector<HTMLElement>(ITEM_CONTAINERS);
-      if (container) {
-        if (container !== block) targets.push(block);
-        container.dataset.rv = "in";
-        targets.push(...(Array.from(container.children) as HTMLElement[]));
-        return;
-      }
-      targets.push(block);
-    });
-    if (targets.length === 0) return;
+    try {
+      document.querySelectorAll<HTMLElement>(".vg main .wrap > *").forEach((block) => {
+        const container = block.matches(ITEM_CONTAINERS)
+          ? block
+          : block.querySelector<HTMLElement>(ITEM_CONTAINERS);
+        if (container) {
+          if (container !== block) targets.push(block);
+          container.dataset.rv = "in";
+          targets.push(...(Array.from(container.children) as HTMLElement[]));
+          return;
+        }
+        targets.push(block);
+      });
+    } catch {
+      bail();
+      return;
+    }
+    if (targets.length === 0) {
+      bail();
+      return;
+    }
+    root.dataset.rvReady = "1";
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {

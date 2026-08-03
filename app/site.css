@@ -505,7 +505,9 @@
    .rv は layout.tsx のインラインスクリプトが <html> に付与（JS有効時のみ）。
    data-rv="in" は ScrollReveal コンポーネントが画面内に入った要素へ付ける。
    ============================================================ */
-.rv .vg main :is(
+/* 非表示側は :where() で詳細度を 0 に固定する。:is() だと引数の最大詳細度
+   （.service .grid > .card）を取り、下の data-rv="in" に勝ってしまい表示されない。 */
+.rv .vg main :where(
   .wrap > *,
   .cases > *, .worry > li, .service .grid > .card, .cg-grid > figure,
   .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *
@@ -518,6 +520,6 @@
 
 @media (prefers-reduced-motion:reduce){
   .vg *{ transition:none!important; }
-  .rv .vg main :is(.wrap > *, .cases > *, .worry > li, .service .grid > .card,
+  .rv .vg main :where(.wrap > *, .cases > *, .worry > li, .service .grid > .card,
     .cg-grid > figure, .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *){ opacity:1; transform:none; }
 }

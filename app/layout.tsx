@@ -90,7 +90,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html:
               "(function(){var d=document.documentElement;d.classList.add('rv');" +
-              "setTimeout(function(){if(d.dataset.rvReady!=='1')d.classList.remove('rv');},4000);})();",
+              "setTimeout(function(){if(d.dataset.rvReady!=='1')d.classList.remove('rv');},1500);})();",
           }}
         />
         <script
