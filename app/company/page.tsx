@@ -41,7 +41,13 @@ export default function CompanyPage() {
                 <div className="sign">
                   <span className="role">{greeting.title}</span>
                   <span className="nm">{greeting.name}</span>
+                  <span className="en">{company.representativeEn}</span>
                 </div>
+                <ul className="greet-creds">
+                  <li>{company.license}</li>
+                  <li>{company.asbestosLicense}</li>
+                  <li>{company.demolitionLicense}</li>
+                </ul>
               </div>
               <div className="greet-body">
                 <h1>{greeting.lead}</h1>

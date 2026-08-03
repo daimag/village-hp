@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { greeting } from "@/app/lib/company";
+import { company, greeting } from "@/app/lib/company";
 import { CompanyTable } from "./CompanyTable";
 
 export function Company() {
@@ -29,7 +29,13 @@ export function Company() {
             <div className="sign">
               <span className="role">{greeting.title}</span>
               <span className="nm">{greeting.name}</span>
+              <span className="en">{company.representativeEn}</span>
             </div>
+            <ul className="greet-creds">
+              <li>{company.license}</li>
+              <li>{company.asbestosLicense}</li>
+              <li>{company.demolitionLicense}</li>
+            </ul>
           </div>
           <div className="greet-body">
             <div className="gh en">MESSAGE</div>
