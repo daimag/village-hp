@@ -21,6 +21,11 @@ export function About() {
             個人のお客様のご相談を、残置物の片付けから解体・整地まで
             <strong>ワンストップ</strong>で、親身にお受けします。まずはお気軽にどうぞ。
           </p>
+          <ul className="creds">
+            <li>一級土木施工管理技士</li>
+            <li>建築物石綿含有建材調査者</li>
+            <li>解体工事業登録 福岡県知事 第1456号</li>
+          </ul>
           <p className="ab-more">
             <a className="btn-ghost" href="/about">
               会社紹介を見る →

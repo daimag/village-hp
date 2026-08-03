@@ -1,4 +1,5 @@
 import { concerns } from "@/app/lib/company";
+import { ConcernIcon } from "./ConcernIcon";
 
 export function Concerns() {
   return (
@@ -11,12 +12,18 @@ export function Concerns() {
           <div className="j">こんなお悩みありませんか？</div>
         </div>
         <ul className="worry">
-          {concerns.map((c, i) => (
-            <li key={i}>{c}</li>
+          {concerns.map((c) => (
+            <li key={c.icon}>
+              <span className="wi">
+                <ConcernIcon icon={c.icon} className="ico" />
+              </span>
+              <h3>{c.title}</h3>
+              <p>{c.note}</p>
+            </li>
           ))}
         </ul>
         <p className="worry-msg">
-          ひとつでも当てはまれば、ヴィレッジにご相談ください。
+          ひとつでも当てはまれば、<strong>ヴィレッジにご相談ください。</strong>
           <br />
           片付けから解体・整地まで、地域の会社としてまとめて解決します。
         </p>

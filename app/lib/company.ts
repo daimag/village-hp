@@ -312,13 +312,20 @@ export const caseGallery = [
 ];
 
 // 個人向けのお悩み（集客フック）
-export const concerns = [
-  "実家が空き家になり、管理や固定資産税が負担になっている",
-  "相続した家をどうすればいいか分からない",
-  "一軒だけ・小さな家でも解体を頼めるのか不安",
-  "解体費用がいくらかかるのか見当がつかない",
-  "家財・遺品が残ったままで、片付けから困っている",
-  "ご近所への騒音・ほこりのトラブルが心配",
+// アイコン＋短い見出しで一目で読めるように（長文はサブテキストへ）
+export type Concern = {
+  icon: "akiya" | "souzoku" | "ikken" | "cost" | "ihin" | "kinjo";
+  title: string;
+  note: string;
+};
+
+export const concerns: Concern[] = [
+  { icon: "akiya", title: "空き家の管理・税金", note: "実家が空き家になり、管理も固定資産税も負担" },
+  { icon: "souzoku", title: "相続した家の扱い", note: "どうすればいいか分からないまま置いている" },
+  { icon: "ikken", title: "一軒だけの解体", note: "小さな家でも頼めるのか不安" },
+  { icon: "cost", title: "費用が読めない", note: "いくらかかるのか見当がつかない" },
+  { icon: "ihin", title: "残置物・遺品", note: "家財が残ったままで、片付けから困っている" },
+  { icon: "kinjo", title: "近隣トラブル", note: "騒音・ほこりでご近所に迷惑をかけないか心配" },
 ];
 
 // 解体費用の目安（2026年の相場ベース。実費は現地見積り）

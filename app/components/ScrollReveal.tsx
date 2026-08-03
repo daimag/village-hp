@@ -19,9 +19,24 @@ export function ScrollReveal() {
     const root = document.documentElement;
     root.dataset.rvReady = "1";
 
-    const targets = Array.from(
-      document.querySelectorAll<HTMLElement>(".vg main .wrap > *")
-    );
+    // カード群は、ひとかたまりではなく1枚ずつ現れるようにする。
+    // 該当する入れ物は自身を即表示にして、子要素を対象へ差し替える。
+    const ITEM_CONTAINERS =
+      ".cases, .worry, .service .grid, .cg-grid, .cardgrid, .reasons, .trio, .measures .mgrid";
+
+    const targets: HTMLElement[] = [];
+    document.querySelectorAll<HTMLElement>(".vg main .wrap > *").forEach((block) => {
+      const container = block.matches(ITEM_CONTAINERS)
+        ? block
+        : block.querySelector<HTMLElement>(ITEM_CONTAINERS);
+      if (container) {
+        if (container !== block) targets.push(block);
+        container.dataset.rv = "in";
+        targets.push(...(Array.from(container.children) as HTMLElement[]));
+        return;
+      }
+      targets.push(block);
+    });
     if (targets.length === 0) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
