@@ -29,9 +29,9 @@
 .vg .brand .vlogo{ width:42px; height:34px; display:block; flex:none; }
 /* ヒーロー上（透過ヘッダー）は白ロゴ。明るい背景でも見えるよう軽い影を付与 */
 .vg .hd:not(.solid) .brand .vlogo{ filter:drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
-.vg .hd nav{ display:flex; gap:26px; margin-left:auto; font-size:12.5px; letter-spacing:.08em; color:#eef2f0; transition:.3s; }
+.vg .hd nav{ display:flex; gap:28px; margin-left:auto; font-size:14px; letter-spacing:.08em; color:#eef2f0; transition:.3s; }
 .vg .hd nav a{ text-decoration:none; } .vg .hd nav a:hover{ color:var(--green); }
-.vg .hd .cbtn{ border:1px solid rgba(255,255,255,.5); padding:9px 20px; border-radius:2px; font-size:12px; letter-spacing:.08em; text-decoration:none; color:#fff; transition:.3s; white-space:nowrap; }
+.vg .hd .cbtn{ border:1px solid rgba(255,255,255,.5); padding:11px 22px; border-radius:2px; font-size:13.5px; letter-spacing:.08em; text-decoration:none; color:#fff; transition:.3s; white-space:nowrap; }
 .vg .hd.solid{ background:rgba(255,255,255,.95); backdrop-filter:blur(10px); box-shadow:0 1px 0 var(--line); }
 .vg .hd.solid .brand{ color:var(--ink); } .vg .hd.solid nav{ color:var(--ink); }
 .vg .hd.solid .cbtn{ border-color:var(--green); color:var(--green2); }
@@ -71,8 +71,8 @@
 .vg .kick{ text-align:center; }
 .vg .kick .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(34px,5vw,58px); font-weight:200; letter-spacing:.03em; line-height:1.08; margin:0; }
 .vg .kick .t .sl{ color:var(--green); }
-.vg .kick .j{ font-size:12.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:12px; }
-.vg .lead{ text-align:center; max-width:760px; margin:24px auto 0; color:var(--mute); font-size:16.5px; line-height:1.85; }
+.vg .kick .j{ font-size:14px; color:var(--green2); letter-spacing:.22em; font-weight:600; margin-top:14px; }
+.vg .lead{ text-align:center; max-width:800px; margin:26px auto 0; color:var(--mute); font-size:clamp(16.5px,1.35vw,19px); line-height:1.9; }
 
 /* ============================================================
    split：テキスト＋写真を画面端まで抜く共通レイアウト
@@ -86,17 +86,17 @@
 /* ラベルは控えめに。主役は下の見出し */
 .vg .split-body .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:200; letter-spacing:.08em; line-height:1; margin:0; color:var(--mute); }
 .vg .split-body .t .sl{ color:var(--green); }
-.vg .split-body .j{ font-size:11.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:10px; }
+.vg .split-body .j{ font-size:13px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:10px; }
 .vg .split-body h1,.vg .split-body h2{ font-size:clamp(27px,3.9vw,42px); font-weight:700; line-height:1.45; margin:30px 0 0; letter-spacing:.01em; text-wrap:balance; }
-.vg .split-body p{ margin:22px 0 0; color:var(--mute); font-size:14.5px; max-width:56ch; }
+.vg .split-body p{ margin:22px 0 0; color:var(--mute); font-size:clamp(15px,1.2vw,17px); max-width:56ch; }
 /* 引用ブロックは塗りをやめ、左の罫だけで静かに見せる */
 .vg .split-body .ind{ margin-top:26px; background:transparent; border-left:2px solid var(--green); border-radius:0;
-  padding:2px 0 2px 22px; color:var(--ink); font-size:15px; line-height:1.95; max-width:54ch; }
+  padding:2px 0 2px 24px; color:var(--ink); font-size:clamp(15.5px,1.3vw,18px); line-height:1.95; max-width:54ch; }
 .vg .split-body .ind strong{ color:var(--green2); font-weight:600; }
 /* 資格などをグラフィック要素として並べる */
 .vg .split-body .creds{ display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 0; padding:0; list-style:none; }
 .vg .split-body .creds li{ display:flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--soft2);
-  border-radius:999px; padding:7px 15px; font-size:12.5px; font-weight:600; letter-spacing:.02em; }
+  border-radius:999px; padding:8px 17px; font-size:13.5px; font-weight:600; letter-spacing:.02em; }
 .vg .split-body .creds li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--green); flex:none; }
 .vg .split-body .ab-more,.vg .split-body .more{ margin-top:30px; text-align:left; }
 /* 写真：外側の端まで抜く */
@@ -133,7 +133,7 @@
 .vg .service .grid > .card:first-child .no{ font-size:38px; }
 .vg .service .card .cih{ position:absolute; top:16px; right:16px; width:44px; height:44px; border-radius:50%; display:grid; place-items:center;
   background:rgba(255,255,255,.15); color:#fff; font-size:22px; backdrop-filter:blur(4px); }
-.vg .service .card .meta .sm{ margin:6px 0 0; font-size:12.5px; font-weight:400; color:#e8f3ec; line-height:1.5; }
+.vg .service .card .meta .sm{ margin:7px 0 0; font-size:14px; font-weight:400; color:#e8f3ec; line-height:1.5; }
 .vg .service .card .meta .more-in{ display:inline-block; margin-top:10px; font-size:11.5px; letter-spacing:.1em; color:#bff0cd; opacity:0; transform:translateY(4px); transition:.25s; }
 .vg .service .card:hover .meta .more-in{ opacity:1; transform:translateY(0); }
 .vg .service .more{ text-align:center; margin-top:42px; position:relative; }
@@ -161,18 +161,18 @@
 
 /* 施工例：対応した建物の実例ギャラリー */
 .vg .case-gallery{ margin-top:64px; }
-.vg .case-gallery h2{ text-align:center; font-size:19px; font-weight:600; letter-spacing:.03em; margin:0 0 26px; }
+.vg .case-gallery h2{ text-align:center; font-size:clamp(20px,2.2vw,25px); font-weight:600; letter-spacing:.03em; margin:0 0 26px; }
 .vg .cg-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .vg .cg-grid figure{ margin:0; }
 .vg .cg-grid .img{ height:clamp(180px,15vw,240px); border-radius:0; }
-.vg .cg-grid figcaption{ margin-top:9px; font-size:12.5px; color:var(--mute); text-align:center; }
+.vg .cg-grid figcaption{ margin-top:10px; font-size:14px; color:var(--mute); text-align:center; }
 
 /* 会社紹介：家族（顔の見える経営） */
 .vg .ab-team{ display:grid; grid-template-columns:300px 1fr; gap:40px; align-items:center; max-width:900px; margin:60px auto 0; }
 .vg .ab-team-img{ width:100%; aspect-ratio:3/4; border-radius:0; box-shadow:0 6px 20px rgba(20,26,24,.10); }
 .vg .ab-team-text .gh{ font-size:12px; letter-spacing:.2em; color:var(--green2); font-weight:600; }
-.vg .ab-team-text h2{ margin:8px 0 0; font-size:clamp(19px,2.4vw,24px); font-weight:600; line-height:1.5; }
-.vg .ab-team-text p{ margin:14px 0 0; color:var(--mute); font-size:14.5px; line-height:1.9; }
+.vg .ab-team-text h2{ margin:8px 0 0; font-size:clamp(21px,2.6vw,28px); font-weight:600; line-height:1.5; }
+.vg .ab-team-text p{ margin:14px 0 0; color:var(--mute); font-size:clamp(15px,1.2vw,17px); line-height:1.95; }
 
 /* 会社紹介ページ */
 .vg .ab-lead{ max-width:820px; margin:50px auto 0; }
@@ -181,7 +181,7 @@
 .vg .ab-lead .ind{ background:var(--soft); border-left:3px solid var(--green); border-radius:0; padding:18px 20px; color:var(--ink); }
 .vg .ab-lead .ind strong{ color:var(--green2); font-weight:600; }
 .vg .ab-strength{ margin-top:64px; }
-.vg .ab-strength h2{ text-align:center; font-size:21px; font-weight:600; letter-spacing:.03em; margin:0; }
+.vg .ab-strength h2{ text-align:center; font-size:clamp(22px,2.4vw,27px); font-weight:600; letter-spacing:.03em; margin:0; }
 .vg .cardgrid .ec .rno{ font-size:26px; font-weight:200; color:var(--green); line-height:1; margin-bottom:4px; }
 .vg .ab-links{ display:flex; gap:16px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:54px; }
 
@@ -206,8 +206,8 @@
 .vg .trio .it{ text-align:center; }
 .vg .trio .img{ height:clamp(190px,17vw,250px); border-radius:0; }
 .vg .trio .no{ font-family:"Helvetica Neue",Arial; color:var(--green); font-size:12px; letter-spacing:.2em; margin-top:16px; }
-.vg .trio h3{ margin:6px 0 0; font-size:16px; font-weight:600; }
-.vg .trio p{ margin:8px 0 0; font-size:13px; color:var(--mute); }
+.vg .trio h3{ margin:7px 0 0; font-size:18.5px; font-weight:600; }
+.vg .trio p{ margin:9px 0 0; font-size:14.5px; color:var(--mute); line-height:1.8; }
 
 /* 近隣対策（グラフィカル・大きな数字） */
 .vg .measures .lead strong{ color:var(--green2); font-weight:700; }
@@ -225,9 +225,9 @@
 .vg .works .g.big{ grid-column:span 2; grid-row:span 2; }
 .vg .works .g .img{ height:100%; filter:saturate(.55) contrast(.97) brightness(.97) grayscale(.16); }
 .vg .works .more{ text-align:center; margin-top:40px; }
-.vg .btn-ghost{ display:inline-block; border:1px solid var(--green); color:var(--green2); padding:15px 46px; border-radius:2px; text-decoration:none; letter-spacing:.1em; font-size:13px; transition:.25s; cursor:pointer; }
+.vg .btn-ghost{ display:inline-block; border:1px solid var(--green); color:var(--green2); padding:17px 48px; border-radius:2px; text-decoration:none; letter-spacing:.1em; font-size:14.5px; transition:.25s; cursor:pointer; }
 .vg .btn-ghost:hover{ background:var(--green); color:#fff; }
-.vg .btn-fill{ display:inline-block; background:var(--green); color:#fff; padding:16px 46px; border:0; border-radius:2px; text-decoration:none; letter-spacing:.08em; font-size:14px; font-weight:500; transition:.25s; cursor:pointer; }
+.vg .btn-fill{ display:inline-block; background:var(--green); color:#fff; padding:18px 48px; border:0; border-radius:2px; text-decoration:none; letter-spacing:.08em; font-size:15.5px; font-weight:500; transition:.25s; cursor:pointer; }
 .vg .btn-fill:hover{ background:var(--green2); }
 
 /* 施工例（ビフォーアフター） */
@@ -240,33 +240,33 @@
 /* 写真は4:3（原本と同比率）。施工例ページ幅では約320pxまで大きく表示される */
 .vg .case .ba .img{ height:auto; aspect-ratio:4/3; min-height:210px; max-height:420px; }
 .vg .case .ba figure.after::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:1px; background:var(--paper); z-index:2; }
-.vg .case .ba figcaption{ position:absolute; left:10px; top:10px; font-family:"Helvetica Neue",Arial; font-size:11px; letter-spacing:.12em; font-weight:700; color:#fff; background:rgba(27,33,31,.72); padding:4px 10px; border-radius:2px; }
+.vg .case .ba figcaption{ position:absolute; left:12px; top:12px; font-family:"Helvetica Neue",Arial; font-size:12px; letter-spacing:.12em; font-weight:700; color:#fff; background:rgba(27,33,31,.72); padding:4px 10px; border-radius:2px; }
 .vg .case .ba figure.after figcaption{ background:var(--green2); }
 .vg .case .ba .pivot{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3;
   width:46px; height:46px; border-radius:50%; display:grid; place-items:center;
   background:var(--paper); color:var(--green2); font-size:19px; box-shadow:0 2px 10px rgba(20,26,24,.28); }
 .vg .case .cbody{ padding:26px 30px 30px; }
-.vg .case .cbody .where{ margin:0; font-size:12px; letter-spacing:.14em; color:var(--mute); }
+.vg .case .cbody .where{ margin:0; font-size:13px; letter-spacing:.14em; color:var(--mute); }
 .vg .case .cbody h3{ margin:7px 0 0; font-size:clamp(20px,2.3vw,24px); font-weight:600; letter-spacing:.02em; line-height:1.5; }
 /* スペックは3つのタイルとして見せる */
 .vg .case .cbody .spec{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:20px 0 0; }
 .vg .case .cbody .spec > div{ background:var(--soft2); border:1px solid var(--line); border-radius:0;
   padding:13px 16px 15px; }
-.vg .case .cbody .spec dt{ font-size:11.5px; letter-spacing:.14em; color:var(--mute); }
+.vg .case .cbody .spec dt{ font-size:12.5px; letter-spacing:.14em; color:var(--mute); }
 .vg .case .cbody .spec dd{ margin:5px 0 0; font-size:21px; font-weight:600; letter-spacing:.01em; line-height:1.3;
   font-variant-numeric:tabular-nums; }
 .vg .case .cbody .price{ display:flex; align-items:baseline; gap:14px; margin-top:20px; }
-.vg .case .cbody .price span{ font-size:12px; color:var(--mute); letter-spacing:.14em; }
+.vg .case .cbody .price span{ font-size:13px; color:var(--mute); letter-spacing:.14em; }
 .vg .case .cbody .price b{ font-size:clamp(30px,4.2vw,40px); font-weight:700; color:var(--green2);
   letter-spacing:.01em; line-height:1.1; font-variant-numeric:tabular-nums; }
-.vg .case .cbody p{ margin:16px 0 0; font-size:14px; color:var(--mute); }
-.vg .note{ text-align:center; margin-top:24px; font-size:12px; color:var(--mute); }
+.vg .case .cbody p{ margin:16px 0 0; font-size:15.5px; color:var(--mute); }
+.vg .note{ text-align:center; margin-top:26px; font-size:13.5px; color:var(--mute); }
 
 /* 遺品整理 トップ概要 */
 .vg .ihin{ background:var(--soft); }
 .vg .ihin .lead strong{ color:var(--ink); font-weight:600; }
 .vg .ihin-chips{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:34px auto 0; max-width:780px; }
-.vg .ihin .chip{ background:#fff; border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:9px 18px; font-size:13.5px; font-weight:600; box-shadow:0 1px 3px rgba(20,26,24,.05); }
+.vg .ihin .chip{ background:#fff; border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:11px 21px; font-size:15px; font-weight:600; box-shadow:0 1px 3px rgba(20,26,24,.05); }
 .vg .ihin .more{ text-align:center; margin-top:36px; }
 
 /* 遺品整理ページ */
@@ -279,15 +279,15 @@
 .vg .cardgrid .ec::before{ content:""; position:absolute; left:0; top:0; height:3px; width:40%; background:var(--green); transition:width .4s cubic-bezier(.22,.61,.36,1); }
 .vg .cardgrid .ec:hover{ transform:translateY(-6px); box-shadow:0 16px 34px rgba(20,26,24,.12); }
 .vg .cardgrid .ec:hover::before{ width:100%; }
-.vg .cardgrid .ec .ec-ic{ width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:var(--soft); color:var(--green2); margin-bottom:14px; }
+.vg .cardgrid .ec .ec-ic{ width:58px; height:58px; border-radius:50%; display:grid; place-items:center; background:var(--soft); color:var(--green2); margin-bottom:14px; }
 .vg .cardgrid .ec .ec-ic .ico{ width:26px; height:26px; }
-.vg .cardgrid .ec h3{ margin:0; font-size:16.5px; font-weight:600; }
-.vg .cardgrid .ec p{ margin:10px 0 0; font-size:13.5px; color:var(--mute); }
+.vg .cardgrid .ec h3{ margin:0; font-size:18.5px; font-weight:600; }
+.vg .cardgrid .ec p{ margin:10px 0 0; font-size:15px; color:var(--mute); line-height:1.85; }
 .vg .estate-price .box{ background:#fff; border:1px solid var(--line); border-radius:0; overflow:hidden; margin:50px auto 0; max-width:640px; }
 .vg .estate-price .row{ display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); }
 .vg .estate-price .row:first-child{ border-top:0; }
 .vg .estate-price dt{ background:var(--soft2); padding:18px 24px; font-size:14px; color:var(--ink); font-weight:600; margin:0; }
-.vg .estate-price dd{ padding:18px 24px; font-size:18px; font-weight:700; color:var(--green2); margin:0; }
+.vg .estate-price dd{ padding:19px 24px; font-size:21px; font-weight:700; color:var(--green2); margin:0; }
 .vg .flow{ max-width:760px; margin:50px auto 0; display:grid; gap:0; }
 .vg .flow .step{ display:grid; grid-template-columns:70px 1fr; gap:20px; padding:22px 0; border-top:1px solid var(--line); }
 .vg .flow .step:first-child{ border-top:0; }
@@ -296,7 +296,7 @@
 .vg .flow .ft p{ margin:6px 0 0; font-size:13.5px; color:var(--mute); }
 .vg .estate-flow .more{ text-align:center; margin-top:44px; }
 .vg .estate-intro .more{ text-align:center; margin-top:32px; }
-.vg .cardgrid .ec,.vg .reasons .rz,.vg .faq .qa,.vg .worry li{ box-shadow:0 1px 3px rgba(20,26,24,.05); }
+.vg .cardgrid .ec,.vg .faq .qa,.vg .worry li{ box-shadow:0 1px 3px rgba(20,26,24,.05); }
 /* お悩み */
 /* お悩み：アイコンタイル3列。長文は小さなサブテキストへ落とす */
 .vg .worry{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:1240px; margin:48px auto 0; list-style:none; padding:0; }
@@ -307,33 +307,21 @@
 .vg .worry .wi{ display:grid; place-items:center; width:62px; height:62px; margin:0 auto; border-radius:50%;
   background:var(--soft); color:var(--green2); }
 .vg .worry .wi .ico{ width:30px; height:30px; stroke-width:1.4; }
-.vg .worry h3{ margin:16px 0 0; font-size:17.5px; font-weight:600; letter-spacing:.02em; line-height:1.5; }
-.vg .worry p{ margin:8px 0 0; font-size:13px; color:var(--mute); line-height:1.75; }
+.vg .worry h3{ margin:16px 0 0; font-size:19.5px; font-weight:600; letter-spacing:.02em; line-height:1.5; }
+.vg .worry p{ margin:9px 0 0; font-size:14.5px; color:var(--mute); line-height:1.8; }
 .vg .worry-msg{ text-align:center; margin-top:40px; font-size:clamp(17px,2.1vw,21px); font-weight:600; color:var(--ink); line-height:1.85; }
 .vg .worry-msg strong{ color:var(--green2); font-weight:700; }
-/* 選ばれる理由 */
-.vg .reasons{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:50px; }
-.vg .reasons .rz{ position:relative; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:0; padding:26px;
-  transition:transform .32s cubic-bezier(.22,.61,.36,1), box-shadow .32s; }
-.vg .reasons .rz::before{ content:""; position:absolute; left:0; top:0; height:3px; width:40%; background:var(--green); transition:width .4s cubic-bezier(.22,.61,.36,1); }
-.vg .reasons .rz:hover{ transform:translateY(-6px); box-shadow:0 16px 34px rgba(20,26,24,.12); }
-.vg .reasons .rz:hover::before{ width:100%; }
-/* 番号は読み物ではなくグラフィック。大きく置いて端で切る */
-.vg .reasons .rno{ position:absolute; right:8px; top:-14px; font-family:"Helvetica Neue",Arial;
-  font-size:86px; font-weight:200; color:var(--green); opacity:.16; line-height:1; letter-spacing:-.02em; pointer-events:none; }
-.vg .reasons .rt h3{ margin:10px 0 0; font-size:16px; font-weight:600; }
-.vg .reasons .rt p{ margin:8px 0 0; font-size:13.5px; color:var(--mute); }
 /* 作業実績ギャラリー */
 .vg .estate-gallery .gal{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:50px; }
 .vg .estate-gallery figure{ margin:0; }
 .vg .estate-gallery .img{ height:clamp(185px,16vw,250px); border-radius:0; }
 .vg .estate-gallery .slot{ border:2px dashed #cdd6d2; color:#9aa4a0; font-size:13px; letter-spacing:.08em; background:#fff; }
-.vg .estate-gallery figcaption{ margin-top:9px; font-size:12.5px; color:var(--mute); text-align:center; }
+.vg .estate-gallery figcaption{ margin-top:10px; font-size:14px; color:var(--mute); text-align:center; }
 /* FAQ */
 .vg .faq{ max-width:820px; margin:46px auto 0; display:grid; gap:14px; }
 .vg .faq .qa{ background:#fff; border:1px solid var(--line); border-radius:0; padding:20px 24px; }
-.vg .faq .q{ font-weight:600; font-size:15px; color:var(--ink); display:flex; gap:12px; align-items:flex-start; }
-.vg .faq .a{ margin-top:11px; font-size:14px; color:var(--mute); display:flex; gap:12px; align-items:flex-start; }
+.vg .faq .q{ font-weight:600; font-size:16.5px; color:var(--ink); display:flex; gap:12px; align-items:flex-start; }
+.vg .faq .a{ margin-top:12px; font-size:15.5px; color:var(--mute); display:flex; gap:12px; align-items:flex-start; }
 .vg .faq .mk{ flex:none; width:24px; height:24px; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:700; }
 .vg .faq .q .mk{ background:var(--green2); color:#fff; }
 .vg .faq .a .mk{ background:var(--soft); color:var(--green2); }
@@ -344,9 +332,9 @@
 .vg .wstep{ position:relative; background:#fff; border:1px solid var(--line); border-radius:0; padding:28px 20px 24px; text-align:center; box-shadow:0 1px 3px rgba(20,26,24,.05); }
 .vg .wstep .wic{ width:64px; height:64px; margin:0 auto; border-radius:50%; display:grid; place-items:center; background:var(--soft); color:var(--green2); }
 .vg .wstep .wic .ico{ width:30px; height:30px; }
-.vg .wstep .wno{ margin-top:14px; font-size:11px; letter-spacing:.16em; color:var(--green); font-weight:700; }
-.vg .wstep h3{ margin:6px 0 0; font-size:16px; font-weight:600; }
-.vg .wstep p{ margin:8px 0 0; font-size:13px; color:var(--mute); line-height:1.75; }
+.vg .wstep .wno{ margin-top:14px; font-size:12px; letter-spacing:.16em; color:var(--green); font-weight:700; }
+.vg .wstep h3{ margin:7px 0 0; font-size:18.5px; font-weight:600; }
+.vg .wstep p{ margin:9px 0 0; font-size:14.5px; color:var(--mute); line-height:1.8; }
 .vg .wstep:not(:last-child)::after{ content:"→"; position:absolute; right:-12px; top:50%; transform:translateY(-50%); color:var(--green); font-size:18px; font-weight:700; z-index:2; }
 
 /* サブページ用ヘッダー */
@@ -459,10 +447,10 @@
 /* 見出しの下に短い罫を入れて本文と切り分ける */
 .vg .greet-body h3::after,.vg .greet-body h1::after{ content:""; display:block; width:44px; height:2px; background:var(--green); margin:22px 0 0; }
 /* 器を広げたぶん、長文は読み幅で止める */
-.vg .greet-body p{ margin:18px 0 0; font-size:14.5px; color:var(--mute); line-height:1.9; max-width:72ch; }
+.vg .greet-body p{ margin:18px 0 0; font-size:clamp(15px,1.2vw,17px); color:var(--mute); line-height:1.95; max-width:70ch; }
 .vg .greet-body h3,.vg .greet-body h1{ max-width:22ch; }
 /* 導入の一段落だけ大きく濃くして、読み出しの起点をつくる */
-.vg .greet-body p:first-of-type{ margin-top:24px; font-size:16.5px; color:var(--ink); line-height:1.95; }
+.vg .greet-body p:first-of-type{ margin-top:26px; font-size:clamp(17px,1.5vw,20px); color:var(--ink); line-height:1.95; }
 .vg .greet-body .btn-ghost{ margin-top:24px; }
 .vg .greet-page{ background:#fff; }
 .vg .greet.full .greet-body h1{ font-size:clamp(22px,3vw,30px); }
@@ -475,7 +463,7 @@
 .vg .company .row{ display:grid; grid-template-columns:200px 1fr; border-top:1px solid var(--line); }
 .vg .company .row:first-child{ border-top:0; }
 .vg .company dt{ background:var(--soft2); padding:18px 24px; font-size:13px; color:var(--mute); font-weight:600; margin:0; letter-spacing:.04em; }
-.vg .company dd{ padding:18px 24px; font-size:14.5px; font-weight:400; margin:0; }
+.vg .company dd{ padding:19px 24px; font-size:16px; font-weight:400; margin:0; }
 
 /* footer */
 .vg .foot{ background:var(--greenD); color:#cfe0d5; padding:64px 0 30px; }
@@ -514,7 +502,7 @@
   .vg .company .row{ grid-template-columns:1fr; }
 }
 @media (max-width:860px){
-  .vg .cardgrid,.vg .reasons,.vg .estate-gallery .gal,.vg .wflow{ grid-template-columns:1fr 1fr; }
+  .vg .cardgrid,.vg .estate-gallery .gal,.vg .wflow{ grid-template-columns:1fr 1fr; }
   .vg .wstep:not(:last-child)::after{ display:none; }
   .vg .svc-hero{ grid-template-columns:1fr; gap:28px; }
   .vg .svc-hero .svc-img{ height:260px; }
@@ -541,7 +529,7 @@
   .vg .cases{ grid-template-columns:1fr; }
 }
 @media (max-width:560px){
-  .vg .cardgrid,.vg .reasons,.vg .estate-gallery .gal,.vg .worry{ grid-template-columns:1fr; }
+  .vg .cardgrid,.vg .estate-gallery .gal,.vg .worry{ grid-template-columns:1fr; }
   .vg .estate-price .row{ grid-template-columns:1fr; }
   .vg .estate-price dd{ padding-top:0; }
 }
@@ -563,7 +551,7 @@
 .rv .vg main :where(
   .wrap > *,
   .cases > *, .worry > li, .service .grid > .card, .cg-grid > figure,
-  .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *,
+  .cardgrid > *, .trio > *, .measures .mgrid > *,
   .split > *
 ){
   opacity:0; transform:translateY(22px);
@@ -575,7 +563,7 @@
 @media (prefers-reduced-motion:reduce){
   .vg *{ transition:none!important; }
   .rv .vg main :where(.wrap > *, .cases > *, .worry > li, .service .grid > .card,
-    .cg-grid > figure, .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *, .split > *){ opacity:1; transform:none; }
+    .cg-grid > figure, .cardgrid > *, .trio > *, .measures .mgrid > *, .split > *){ opacity:1; transform:none; }
 }
 
 /* ============================================================
@@ -593,13 +581,6 @@
   .vg .ab-strength .cardgrid > *:nth-child(2),
   .vg .ab-strength .cardgrid > *:nth-child(3){ margin-top:0; }
 }
-
-/* ============================================================
-   /ihin-seiri：見出しなしの素のお悩みリスト（アイコンタイルの簡易版）
-   ============================================================ */
-.vg .worry.plain li{ text-align:left; padding:24px 24px 24px 52px; font-size:15.5px; line-height:1.75; font-weight:500; }
-.vg .worry.plain li::before{ content:""; position:absolute; left:22px; top:30px; width:14px; height:8px;
-  border-left:2px solid var(--green); border-bottom:2px solid var(--green); transform:rotate(-45deg); }
 
 /* 遺品整理ページのギャラリーも画面幅に追従して大きく */
 .vg .estate-gallery .gal{ gap:clamp(14px,1.6vw,24px); }

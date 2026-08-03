@@ -224,15 +224,6 @@ export const cases: DemolitionCase[] = [
 // 遺品整理（内容・料金の目安・流れ）
 // 料金は一般的な相場の目安（間取り別）。実費は荷物量・現場状況で変動 → 訪問無料見積もり前提。
 // こんなお悩みありませんか
-export const estateWorries = [
-  "遠方に住んでいて、実家の片付けになかなか行けない",
-  "何から手をつければいいのか分からない",
-  "大切な写真や思い出の品は残したい",
-  "仏壇・お位牌・人形の処分に困っている",
-  "片付けたあと、そのまま解体もお願いしたい",
-  "費用がいくらかかるのか不安",
-];
-
 // 対応サービス
 export const estateServices = [
   { icon: "sort" as const, title: "遺品整理", description: "残すもの・処分するものを、ご遺族と確認しながら一つひとつ丁寧に仕分け。搬出まで対応します。" },
@@ -245,15 +236,6 @@ export const estateServices = [
   { icon: "demolish" as const, title: "解体・整地までワンストップ", description: "片付け後、そのまま建物の解体・整地まで自社で対応。何社も探す必要はありません。" },
 ];
 
-// 選ばれる理由
-export const estateReasons = [
-  { title: "お見積もり無料・追加料金なし", description: "訪問でしっかり確認し、明朗な料金を事前にご提示します。" },
-  { title: "解体まで自社でワンストップ", description: "片付けから解体・整地まで一社で完結。窓口が一つで安心です。" },
-  { title: "地域密着（北九州）", description: "地元だから小回りが利き、フットワーク軽くお伺いします。" },
-  { title: "買取で費用を軽減", description: "価値ある品は買取し、整理にかかる総額を抑えます。" },
-  { title: "心情に寄り添う対応", description: "思い出を大切に、ご遺族のお気持ちに配慮して作業します。" },
-  { title: "有資格の解体会社が運営", description: "一級土木施工管理技士・石綿含有建材調査者が在籍し安心。" },
-];
 
 // よくあるご質問
 export const estateFaq = [

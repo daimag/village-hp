@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  estateWorries,
   estateServices,
   estateWorkFlow,
-  estateReasons,
   estatePricing,
   estateFlow,
   estateFaq,
@@ -49,26 +47,6 @@ export default function EstateCleanupPage() {
           </div>
         </section>
 
-        {/* お悩み */}
-        <section className="estate-worry">
-          <div className="wrap">
-            <div className="kick">
-              <p className="t en">
-                <span className="sl">/</span> CONCERNS
-              </p>
-              <div className="j">こんなお悩みはありませんか？</div>
-            </div>
-            <ul className="worry plain">
-              {estateWorries.map((w, i) => (
-                <li key={i}>{w}</li>
-              ))}
-            </ul>
-            <p className="worry-msg">
-              ひとつでも当てはまれば、ヴィレッジにご相談ください。片付けから解体まで、まとめて解決します。
-            </p>
-          </div>
-        </section>
-
         {/* 対応サービス */}
         <section className="estate-serv">
           <div className="wrap">
@@ -102,8 +80,7 @@ export default function EstateCleanupPage() {
               <div className="j">整理から解体まで、ワンストップ</div>
             </div>
             <p className="lead">
-              仕分け・搬出・清掃、そして<strong>建物の解体・整地まで</strong>。
-              何社も手配する必要はありません。すべて自社で、まとめてお引き受けします。
+              何社も手配する必要はありません。<strong>すべて自社で、まとめて。</strong>
             </p>
             <div className="wflow">
               {estateWorkFlow.map((s, i) => (
@@ -120,30 +97,9 @@ export default function EstateCleanupPage() {
           </div>
         </section>
 
-        {/* 選ばれる理由 */}
-        <section className="estate-reason">
-          <div className="wrap">
-            <div className="kick">
-              <p className="t en">
-                <span className="sl">/</span> REASON
-              </p>
-              <div className="j">選ばれる理由</div>
-            </div>
-            <div className="reasons">
-              {estateReasons.map((r, i) => (
-                <div className="rz" key={i}>
-                  <div className="rno en">{String(i + 1).padStart(2, "0")}</div>
-                  <div className="rt">
-                    <h3>{r.title}</h3>
-                    <p>{r.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* 作業実績（写真） */}
+        {/* 写真が1枚も無いあいだはセクションごと出さない（空枠が並ぶのを防ぐ） */}
+        {estateGallery.some((g) => g.src) && (
         <section className="estate-gallery">
           <div className="wrap">
             <div className="kick">
@@ -153,9 +109,10 @@ export default function EstateCleanupPage() {
               <div className="j">作業実績（写真）</div>
             </div>
             <div className="gal">
-              {estateGallery.map((g, i) => (
-                <figure key={i}>
-                  {g.src ? (
+              {estateGallery
+                .filter((g) => g.src)
+                .map((g, i) => (
+                  <figure key={i}>
                     <div
                       className="img"
                       style={{
@@ -164,15 +121,13 @@ export default function EstateCleanupPage() {
                         backgroundPosition: "center",
                       }}
                     />
-                  ) : (
-                    <div className="img ph slot">写真準備中</div>
-                  )}
-                  <figcaption>{g.caption}</figcaption>
-                </figure>
-              ))}
+                    <figcaption>{g.caption}</figcaption>
+                  </figure>
+                ))}
             </div>
           </div>
         </section>
+        )}
 
         {/* 料金の目安 */}
         <section className="estate-price">
