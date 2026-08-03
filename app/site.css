@@ -9,14 +9,15 @@
 }
 .vg a{ color:inherit; }
 .vg .en{ font-family:"Helvetica Neue",Arial,sans-serif; }
-.vg .wrap{ max-width:1120px; margin:0 auto; padding:0 30px; }
+/* 全画面テイスト：器を広げ、左右余白は画面幅に追従させる */
+.vg .wrap{ width:100%; max-width:1460px; margin:0 auto; padding:0 clamp(22px,4vw,64px); }
 .vg .ph{ display:flex; align-items:center; justify-content:center; text-align:center; background:#e4e8ee; color:#8b95a4; }
 .vg .ph.dark{ background:linear-gradient(135deg,#2b333d,#161b21); }
 .vg svg.ico{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
 
 /* header */
 .vg .hd{ position:fixed; top:0; left:0; right:0; z-index:40; transition:.3s; }
-.vg .hd .in{ max-width:1120px; margin:0 auto; padding:20px 30px; display:flex; align-items:center; gap:26px; }
+.vg .hd .in{ max-width:1460px; margin:0 auto; padding:20px clamp(22px,4vw,64px); display:flex; align-items:center; gap:26px; }
 .vg .brand{ display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.08em; color:#fff; transition:.3s; text-decoration:none; }
 .vg .brand .vmark{ width:32px; height:32px; border-radius:8px; display:grid; place-items:center; color:#06140a; font-weight:900;
   background:linear-gradient(135deg,#7be3a0,var(--green)); }
@@ -60,18 +61,18 @@
 .vg .hero .scroll::after{ content:""; display:block; width:1px; height:44px; background:linear-gradient(#d3dad6,transparent); margin:10px auto 0; }
 
 /* section scaffolding */
-.vg section{ padding:110px 0; }
+.vg section{ padding:clamp(88px,10vw,164px) 0; }
 /* サブページ：固定ヘッダー分の余白を先頭セクションに確保 */
 .vg .hd.sub ~ main > section:first-child{ padding-top:128px; }
 .vg .kick{ text-align:center; }
 .vg .kick .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(34px,5vw,58px); font-weight:200; letter-spacing:.03em; line-height:1.08; margin:0; }
 .vg .kick .t .sl{ color:var(--green); }
 .vg .kick .j{ font-size:12.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:12px; }
-.vg .lead{ text-align:center; max-width:680px; margin:24px auto 0; color:var(--mute); font-size:16.5px; line-height:1.85; }
+.vg .lead{ text-align:center; max-width:760px; margin:24px auto 0; color:var(--mute); font-size:16.5px; line-height:1.85; }
 
 /* about */
 /* about：見出しを主役に据え、写真側を大きく取った非対称レイアウト */
-.vg .about{ display:grid; grid-template-columns:1fr 1.12fr; gap:64px; align-items:start; }
+.vg .about{ display:grid; grid-template-columns:1fr 1.12fr; gap:clamp(44px,5vw,80px); align-items:start; }
 /* ラベルとしての ABOUT は控えめに。主役は下の h2 */
 .vg .about .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:200; letter-spacing:.08em; line-height:1; margin:0; color:var(--mute); }
 .vg .about .t .sl{ color:var(--green); }
@@ -91,7 +92,7 @@
 /* 写真の背後にずらした緑の面を敷いて奥行きを出す */
 .vg .about .imgwrap::before{ content:""; position:absolute; left:0; bottom:0; width:56%; height:62%;
   background:var(--soft); border-left:3px solid var(--green); border-radius:4px; }
-.vg .about .imgwrap .a{ position:relative; height:520px; border-radius:4px; box-shadow:0 18px 44px rgba(20,26,24,.16); }
+.vg .about .imgwrap .a{ position:relative; height:clamp(440px,44vw,660px); border-radius:4px; box-shadow:0 18px 44px rgba(20,26,24,.16); }
 .vg .about .imgwrap .tagen{ position:absolute; right:-14px; top:26px; writing-mode:vertical-rl; font-family:"Helvetica Neue",Arial;
   font-size:11.5px; letter-spacing:.34em; color:var(--green2); font-weight:600;
   background:var(--paper); padding:14px 5px; border-radius:2px; }
@@ -103,13 +104,13 @@
 .vg .service .bg::after{ content:""; position:absolute; inset:0;
   background:linear-gradient(155deg, rgba(10,26,16,.90) 0%, rgba(18,80,38,.88) 46%, rgba(8,18,12,.94) 100%); }
 .vg .service .kick .t,.vg .service .lead{ color:#fff; } .vg .service .kick .t .sl{ color:#7be3a0; } .vg .service .kick .j{ color:#bfeccb; }
-.vg .service .grid{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:50px; }
+.vg .service .grid{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,1.6vw,24px); margin-top:50px; }
 /* 主力事業（1枚目）は2列ぶち抜きで大きく見せる */
 .vg .service .grid > .card:first-child{ grid-column:span 2; }
-.vg .service .card{ position:relative; height:300px; border-radius:5px; overflow:hidden; display:flex; align-items:flex-end; text-decoration:none;
+.vg .service .card{ position:relative; height:clamp(280px,24vw,380px); border-radius:5px; overflow:hidden; display:flex; align-items:flex-end; text-decoration:none;
   box-shadow:0 12px 30px rgba(0,0,0,.30); transition:transform .4s cubic-bezier(.22,.61,.36,1), box-shadow .4s; }
 .vg .service .card:hover{ transform:translateY(-6px); box-shadow:0 20px 44px rgba(0,0,0,.42); }
-.vg .service .grid > .card:first-child{ height:376px; }
+.vg .service .grid > .card:first-child{ height:clamp(340px,31vw,490px); }
 .vg .service .card .img{ position:absolute; inset:0; transition:.6s cubic-bezier(.22,.61,.36,1);
   filter:saturate(.9) contrast(1.06); }
 .vg .service .card:hover .img{ transform:scale(1.07); }
@@ -221,12 +222,12 @@
 /* 施工例（ビフォーアフター） */
 .vg .works .lead strong{ color:var(--ink); font-weight:600; }
 .vg .cases{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:50px; }
-.vg .cases.list{ grid-template-columns:1fr; max-width:920px; margin-left:auto; margin-right:auto; }
+.vg .cases.list{ grid-template-columns:1fr; max-width:1180px; margin-left:auto; margin-right:auto; }
 .vg .case{ border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; }
 .vg .case .ba{ position:relative; display:grid; grid-template-columns:1fr 1fr; align-items:stretch; }
 .vg .case .ba figure{ margin:0; position:relative; }
 /* 写真は4:3（原本と同比率）。施工例ページ幅では約320pxまで大きく表示される */
-.vg .case .ba .img{ height:auto; aspect-ratio:4/3; min-height:210px; }
+.vg .case .ba .img{ height:auto; aspect-ratio:4/3; min-height:210px; max-height:420px; }
 .vg .case .ba figure.after::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:1px; background:var(--paper); z-index:2; }
 .vg .case .ba figcaption{ position:absolute; left:10px; top:10px; font-family:"Helvetica Neue",Arial; font-size:11px; letter-spacing:.12em; font-weight:700; color:#fff; background:rgba(27,33,31,.72); padding:4px 10px; border-radius:2px; }
 .vg .case .ba figure.after figcaption{ background:var(--green2); }
@@ -282,7 +283,7 @@
 .vg .cardgrid .ec,.vg .reasons .rz,.vg .faq .qa,.vg .worry li{ box-shadow:0 1px 3px rgba(20,26,24,.05); }
 /* お悩み */
 /* お悩み：アイコンタイル3列。長文は小さなサブテキストへ落とす */
-.vg .worry{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:980px; margin:48px auto 0; list-style:none; padding:0; }
+.vg .worry{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:1240px; margin:48px auto 0; list-style:none; padding:0; }
 .vg .worry li{ position:relative; padding:30px 24px 26px; background:rgba(255,255,255,.9); backdrop-filter:blur(4px);
   border:1px solid rgba(255,255,255,.9); border-radius:8px; box-shadow:0 2px 10px rgba(20,26,24,.06);
   text-align:center; transition:transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s, background .3s; }
@@ -328,7 +329,7 @@
 
 /* サブページ用ヘッダー */
 .vg .subhd{ border-bottom:1px solid var(--line); background:#fff; }
-.vg .subhd .in{ max-width:1120px; margin:0 auto; padding:16px 30px; display:flex; align-items:center; gap:20px; }
+.vg .subhd .in{ max-width:1460px; margin:0 auto; padding:16px clamp(22px,4vw,64px); display:flex; align-items:center; gap:20px; }
 .vg .subhd .brand{ color:var(--ink); }
 .vg .subhd .brand .vmark{ width:32px; height:32px; border-radius:8px; display:grid; place-items:center; color:#06140a; font-weight:900; background:linear-gradient(135deg,#7be3a0,var(--green)); }
 .vg .subhd .brand .bt{ line-height:1.1; } .vg .subhd .brand .bt small{ display:block; font-size:9px; letter-spacing:.24em; font-weight:400; opacity:.7; }
@@ -412,7 +413,7 @@
 .vg .mapbox iframe{ width:100%; height:230px; border:0; display:block; }
 
 /* 代表あいさつ */
-.vg .greet{ display:grid; grid-template-columns:344px 1fr; gap:56px; align-items:start; margin-top:50px; margin-bottom:44px; }
+.vg .greet{ display:grid; grid-template-columns:clamp(300px,25vw,420px) 1fr; gap:clamp(44px,4.6vw,76px); align-items:start; margin-top:50px; margin-bottom:44px; }
 .vg .greet-figure{ position:sticky; top:20px; padding:0 0 18px 18px; }
 /* 写真の背後に緑の面をずらして敷き、平坦さを解消 */
 .vg .greet-figure::before{ content:""; position:absolute; left:0; bottom:0; width:66%; height:52%;
@@ -435,7 +436,9 @@
 .vg .greet-body h3,.vg .greet-body h1{ margin:8px 0 0; font-size:clamp(22px,3vw,32px); font-weight:700; line-height:1.5; letter-spacing:.02em; text-wrap:balance; }
 /* 見出しの下に短い罫を入れて本文と切り分ける */
 .vg .greet-body h3::after,.vg .greet-body h1::after{ content:""; display:block; width:44px; height:2px; background:var(--green); margin:22px 0 0; }
-.vg .greet-body p{ margin:18px 0 0; font-size:14.5px; color:var(--mute); line-height:1.9; }
+/* 器を広げたぶん、長文は読み幅で止める */
+.vg .greet-body p{ margin:18px 0 0; font-size:14.5px; color:var(--mute); line-height:1.9; max-width:72ch; }
+.vg .greet-body h3,.vg .greet-body h1{ max-width:22ch; }
 /* 導入の一段落だけ大きく濃くして、読み出しの起点をつくる */
 .vg .greet-body p:first-of-type{ margin-top:24px; font-size:16.5px; color:var(--ink); line-height:1.95; }
 .vg .greet-body .btn-ghost{ margin-top:24px; }
