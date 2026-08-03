@@ -74,32 +74,39 @@
 .vg .kick .j{ font-size:12.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:12px; }
 .vg .lead{ text-align:center; max-width:760px; margin:24px auto 0; color:var(--mute); font-size:16.5px; line-height:1.85; }
 
-/* about */
-/* about：見出しを主役に据え、写真側を大きく取った非対称レイアウト */
-.vg .about-sec{ overflow-x:clip; }
-.vg .about{ display:grid; grid-template-columns:1fr 1.12fr; gap:clamp(44px,5vw,80px); align-items:center; }
-/* ラベルとしての ABOUT は控えめに。主役は下の h2 */
-.vg .about .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:200; letter-spacing:.08em; line-height:1; margin:0; color:var(--mute); }
-.vg .about .t .sl{ color:var(--green); }
-.vg .about .j{ font-size:11.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:10px; }
-.vg .about h2{ font-size:clamp(27px,3.9vw,42px); font-weight:700; line-height:1.45; margin:30px 0 0; letter-spacing:.01em; text-wrap:balance; }
-.vg .about p{ margin:22px 0 0; color:var(--mute); font-size:14.5px; }
+/* ============================================================
+   split：テキスト＋写真を画面端まで抜く共通レイアウト
+   .split       … 写真が右（テキスト左）
+   .split.alt   … 写真が左（テキスト右）
+   写真は角丸・影・余白なし。端が切れていること自体を見せる
+   ============================================================ */
+.vg .split-sec{ overflow-x:clip; }
+.vg .split{ display:grid; grid-template-columns:1fr 1.12fr; gap:clamp(44px,5vw,80px); align-items:center; }
+.vg .split.alt{ grid-template-columns:1.12fr 1fr; }
+/* ラベルは控えめに。主役は下の見出し */
+.vg .split-body .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:200; letter-spacing:.08em; line-height:1; margin:0; color:var(--mute); }
+.vg .split-body .t .sl{ color:var(--green); }
+.vg .split-body .j{ font-size:11.5px; color:var(--green2); letter-spacing:.24em; font-weight:600; margin-top:10px; }
+.vg .split-body h2{ font-size:clamp(27px,3.9vw,42px); font-weight:700; line-height:1.45; margin:30px 0 0; letter-spacing:.01em; text-wrap:balance; }
+.vg .split-body p{ margin:22px 0 0; color:var(--mute); font-size:14.5px; max-width:56ch; }
 /* 引用ブロックは塗りをやめ、左の罫だけで静かに見せる */
-.vg .about .ind{ margin-top:26px; background:transparent; border-left:2px solid var(--green); border-radius:0;
-  padding:2px 0 2px 22px; color:var(--ink); font-size:15px; line-height:1.95; }
-.vg .about .ind strong{ color:var(--green2); font-weight:600; }
-/* 資格をグラフィック要素として並べる */
-.vg .about .creds{ display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 0; padding:0; list-style:none; }
-.vg .about .creds li{ display:flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--soft2);
+.vg .split-body .ind{ margin-top:26px; background:transparent; border-left:2px solid var(--green); border-radius:0;
+  padding:2px 0 2px 22px; color:var(--ink); font-size:15px; line-height:1.95; max-width:54ch; }
+.vg .split-body .ind strong{ color:var(--green2); font-weight:600; }
+/* 資格などをグラフィック要素として並べる */
+.vg .split-body .creds{ display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 0; padding:0; list-style:none; }
+.vg .split-body .creds li{ display:flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--soft2);
   border-radius:999px; padding:7px 15px; font-size:12.5px; font-weight:600; letter-spacing:.02em; }
-.vg .about .creds li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--green); flex:none; }
-/* 写真は画面右端まで抜く。額縁（余白・角丸・影・背後の面）は全部やめて、
-   端が切れていること自体を見せる */
-.vg .about .imgwrap{ position:relative; padding:0; margin-right:calc(-1 * var(--bleed)); }
-.vg .about .imgwrap .a{ position:relative; height:clamp(460px,50vw,720px); border-radius:0; }
-.vg .about .imgwrap .tagen{ position:absolute; left:-15px; top:30px; writing-mode:vertical-rl; font-family:"Helvetica Neue",Arial;
+.vg .split-body .creds li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--green); flex:none; }
+.vg .split-body .ab-more,.vg .split-body .more{ margin-top:30px; text-align:left; }
+/* 写真：外側の端まで抜く */
+.vg .split-media{ position:relative; padding:0; margin-right:calc(-1 * var(--bleed)); }
+.vg .split.alt .split-media{ margin-right:0; margin-left:calc(-1 * var(--bleed)); }
+.vg .split-media .a{ position:relative; height:clamp(460px,50vw,720px); border-radius:0; }
+.vg .split-media .tagen{ position:absolute; left:-15px; top:30px; writing-mode:vertical-rl; font-family:"Helvetica Neue",Arial;
   font-size:11.5px; letter-spacing:.34em; color:var(--green2); font-weight:600;
   background:var(--paper); padding:16px 5px; border-radius:0; }
+.vg .split.alt .split-media .tagen{ left:auto; right:-15px; }
 
 /* service */
 .vg .service{ position:relative; overflow:hidden; }
@@ -132,7 +139,7 @@
 .vg .service .more{ text-align:center; margin-top:42px; position:relative; }
 .vg .btn-ghost.light{ border-color:rgba(255,255,255,.6); color:#fff; }
 .vg .btn-ghost.light:hover{ background:#fff; color:var(--green2); }
-.vg .about .ab-more{ margin-top:24px; }
+.vg .split-body .ab-more{ margin-top:30px; }
 
 /* サービス詳細ページ */
 .vg .svc-hero{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; margin-top:50px; }
@@ -487,11 +494,12 @@
   .vg .hd .burger{ display:grid; place-items:center; }
   .vg section{ padding:74px 0; }
   .vg .hd.sub ~ main > section:first-child{ padding-top:100px; }
-  .vg .about,.vg .contact .grid{ grid-template-columns:1fr; gap:34px; }
-  /* 1カラムでは左右とも抜いて全幅写真に */
-  .vg .about .imgwrap{ margin-left:calc(-1 * var(--bleed)); }
-  .vg .about .imgwrap .a{ height:clamp(300px,58vw,440px); }
-  .vg .about .imgwrap .tagen{ left:auto; right:14px; top:14px; }
+  .vg .split,.vg .contact .grid{ grid-template-columns:1fr; gap:34px; }
+  .vg .split.alt{ grid-template-columns:1fr; }
+  /* 1カラムでは左右とも抜いて全幅写真に。写真は必ず先頭へ */
+  .vg .split-media{ margin-left:calc(-1 * var(--bleed)); margin-right:calc(-1 * var(--bleed)); order:-1; }
+  .vg .split-media .a{ height:clamp(300px,58vw,440px); }
+  .vg .split-media .tagen{ left:auto; right:14px; top:14px; }
   .vg .worry{ grid-template-columns:1fr 1fr; }
   .vg .service .grid,.vg .trio,.vg .measures .mgrid{ grid-template-columns:1fr 1fr; }
   .vg .service .grid > .card:first-child{ grid-column:span 2; height:300px; }
@@ -555,7 +563,8 @@
 .rv .vg main :where(
   .wrap > *,
   .cases > *, .worry > li, .service .grid > .card, .cg-grid > figure,
-  .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *
+  .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *,
+  .split > *
 ){
   opacity:0; transform:translateY(22px);
   transition:opacity .75s cubic-bezier(.22,.61,.36,1) var(--rv-d,0ms),
@@ -566,7 +575,7 @@
 @media (prefers-reduced-motion:reduce){
   .vg *{ transition:none!important; }
   .rv .vg main :where(.wrap > *, .cases > *, .worry > li, .service .grid > .card,
-    .cg-grid > figure, .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *){ opacity:1; transform:none; }
+    .cg-grid > figure, .cardgrid > *, .reasons > *, .trio > *, .measures .mgrid > *, .split > *){ opacity:1; transform:none; }
 }
 
 /* ============================================================
@@ -584,3 +593,16 @@
   .vg .ab-strength .cardgrid > *:nth-child(2),
   .vg .ab-strength .cardgrid > *:nth-child(3){ margin-top:0; }
 }
+
+/* ============================================================
+   /ihin-seiri：見出しなしの素のお悩みリスト（アイコンタイルの簡易版）
+   ============================================================ */
+.vg .worry.plain li{ text-align:left; padding:24px 24px 24px 52px; font-size:15.5px; line-height:1.75; font-weight:500; }
+.vg .worry.plain li::before{ content:""; position:absolute; left:22px; top:30px; width:14px; height:8px;
+  border-left:2px solid var(--green); border-bottom:2px solid var(--green); transform:rotate(-45deg); }
+
+/* 遺品整理ページのギャラリーも画面幅に追従して大きく */
+.vg .estate-gallery .gal{ gap:clamp(14px,1.6vw,24px); }
+
+/* サブページ先頭の split は、固定ヘッダー分だけ写真も下げる */
+.vg .hd.sub ~ main > section:first-child .split-media{ margin-top:8px; }

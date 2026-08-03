@@ -1,8 +1,8 @@
 export function About() {
   return (
-    <section id="about" className="about-sec">
-      <div className="wrap about">
-        <div>
+    <section id="about" className="split-sec">
+      <div className="wrap split">
+        <div className="split-body">
           <p className="t en">
             <span className="sl">/</span> ABOUT
           </p>
@@ -32,7 +32,7 @@ export function About() {
             </a>
           </p>
         </div>
-        <div className="imgwrap">
+        <div className="split-media">
           <div
             className="a ph"
             style={{
