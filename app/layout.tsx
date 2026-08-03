@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import "./site.css";
 import { company } from "./lib/company";
+import { ScrollReveal } from "./components/ScrollReveal";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -82,11 +83,22 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${notoSansJP.variable} h-full scroll-smooth antialiased`}>
       <body className="min-h-full font-sans">
+        {/* スクロール表示アニメーションの有効化。描画前に <html> へ .rv を付けて
+            初期状態のちらつきを防ぐ。JSが動かない環境では付かず、常に表示される。
+            4秒経ってもScrollRevealが起動しない場合は保険として解除する。 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var d=document.documentElement;d.classList.add('rv');" +
+              "setTimeout(function(){if(d.dataset.rvReady!=='1')d.classList.remove('rv');},4000);})();",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <ScrollReveal />
       </body>
     </html>
   );
