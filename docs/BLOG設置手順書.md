@@ -97,6 +97,47 @@ jobs:
 ### ⑦ 投稿アカウントを content リポへ招待
 - `daimag/village-hp-content` → Settings → Collaborators で、投稿用アカウントを
   **Write権限**で招待 → 承認。**コード本体リポ（village-hp）には招待しない。**
+- ⚠️ **招待は「送った」だけでは効きません。** 投稿用アカウント側で承諾するまで無権限です
+  （GitHubの招待は**7日で失効**）。承諾ページ：`https://github.com/（owner）/（repo）/invitations`
+- 権限が入ったかの確認コマンド（`push: true` になっていればOK）:
+  ```bash
+  curl -s -H "Authorization: Bearer <daimagのトークン>"     "https://api.github.com/repos/daimag/village-hp-content/collaborators?affiliation=all"     | grep -o '"login": *"[^"]*"\|"push": *[a-z]*'
+  # 保留中の招待が残っていないかも確認
+  curl -s -H "Authorization: Bearer <daimagのトークン>"     "https://api.github.com/repos/daimag/village-hp-content/invitations"
+  ```
+
+---
+
+## 2-2. トラブル対応：/admin にログインできない
+
+### 症状：`Your GitHub user account does not have access to this repo`（画面は「ログインしています…」で停止）
+
+**この症状は yumehoken／ヴィレッジの2案件で発生しています。原因は2つのどちらかです。**
+
+**原因A：ブラウザに残った古いトークン（頻度が高い）**
+
+OAuth認証そのものは成功しており、`localStorage` に残った**権限が無い時期のトークン**が使い回されている状態。
+権限を正しく設定した後でも、ブラウザ側が古いままだとこのエラーが出続けます。
+
+対処（上から順に試す）:
+1. `/admin` で **ログアウト → 再ログイン**
+2. **シークレットウィンドウ**で `/admin` を開く（これで入れれば原因Aで確定）
+3. それでも駄目なら DevTools → Application → Local Storage → 対象ドメインの
+   `decap-cms-user` / `netlify-cms-user` を削除して再ログイン
+
+**原因B：投稿アカウントに Write 権限が無い**
+
+⑦の招待が未承諾または失効している。上記の確認コマンドで `push: true` を確認する。
+**先に原因Aを潰してから権限を疑うこと**（権限は正しいのにブラウザ側が原因、というケースが実際にあった）。
+
+### 切り分けの早見表
+
+| 確認 | 結果 | 判断 |
+|---|---|---|
+| シークレットウィンドウで入れる | 入れる | 原因A（ブラウザのトークン） |
+| 〃 | 入れない | 原因B（権限）→ 確認コマンドへ |
+| 確認コマンドで `push: true` | ある | 権限は正常。原因Aを徹底する |
+| 〃 | 無い／招待が保留のまま | 招待を再送 → **承諾まで完了させる** |
 
 ---
 
